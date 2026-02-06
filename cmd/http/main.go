@@ -7,6 +7,10 @@ import (
 	"go.uber.org/zap"
 )
 
+func init() {
+	configs.LoadEnvironmentsFromEnvFile()
+}
+
 func main() {
 	fx.
 		New(
@@ -14,9 +18,6 @@ func main() {
 				configs.GetEnvironments,
 				configs.NewHttpServer,
 				configs.NewLogger,
-			),
-			fx.Invoke(
-				configs.LoadEnvironmentsFromEnvFile,
 			),
 			fx.WithLogger(func(logger *zap.Logger) fxevent.Logger {
 				return &fxevent.ZapLogger{Logger: logger}

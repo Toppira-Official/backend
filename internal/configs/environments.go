@@ -16,7 +16,7 @@ type Environments struct {
 }
 
 func LoadEnvironmentsFromEnvFile() {
-	err := godotenv.Load(".env")
+	err := godotenv.Load()
 	if err != nil {
 		log.Println("cannot load environments from given env file")
 	}

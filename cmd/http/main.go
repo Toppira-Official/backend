@@ -20,6 +20,7 @@ func main() {
 				configs.NewHttpServer,
 				configs.NewLogger,
 				configs.NewDB,
+				configs.NewQuery,
 			),
 			fx.Invoke(
 				scripts.LoadMigrations,

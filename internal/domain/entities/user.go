@@ -11,5 +11,5 @@ type User struct {
 
 	Password *string `json:"-"`
 
-	Reminders []*Reminder `gorm:"constraint:OnDelete:CASCADE"`
+	Reminders []*Reminder `json:"reminders,omitempty" gorm:"constraint:OnDelete:CASCADE"`
 }

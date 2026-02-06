@@ -3,8 +3,8 @@ package handler
 import "github.com/Toppira-Official/backend/internal/domain/entities"
 
 type SignUpWithEmailPasswordInput struct {
-	Email    string `binding:"required" json:"email"`
-	Password string `binding:"required" json:"password"`
+	Email    string `binding:"required,email" json:"email"`
+	Password string `binding:"required,min=8" json:"password"`
 }
 
 type SignUpWithEmailPasswordOutput struct {

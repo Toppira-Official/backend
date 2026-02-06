@@ -4,19 +4,23 @@ import (
 	"time"
 
 	"github.com/Toppira-Official/backend/internal/domain/constants"
+	"gorm.io/datatypes"
 )
 
 type Reminder struct {
-	Base
+	Base `gorm:"embedded"`
 
-	Title       string  `json:"title"`
+	Title       string  `gorm:"not null" json:"title"`
 	Description *string `json:"description,omitempty"`
 
-	Status        constants.ReminderStatus `json:"status"`
-	ReminderTimes []time.Time              `json:"reminder_times,omitempty"`
-	ScheduledAt   time.Time                `json:"scheduled_at"`
+	Status constants.ReminderStatus `gorm:"type:varchar(20);not null" json:"status"`
 
-	Priority *string `json:"priority"`
+	ReminderTimes datatypes.JSON `gorm:"type:json" json:"reminder_times,omitempty"`
 
-	UserID uint `json:"user_id"`
+	ScheduledAt time.Time `gorm:"not null;index" json:"scheduled_at"`
+
+	Priority *string `gorm:"type:varchar(20)" json:"priority"`
+
+	UserID uint `gorm:"not null;index" json:"user_id"`
+	User   User `gorm:"constraint:OnDelete:CASCADE"`
 }

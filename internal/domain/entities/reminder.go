@@ -24,3 +24,7 @@ type Reminder struct {
 	UserID uint `gorm:"not null;index" json:"user_id"`
 	User   User `gorm:"constraint:OnDelete:CASCADE"`
 }
+
+func (Reminder) TableName() string {
+	return "Reminders"
+}

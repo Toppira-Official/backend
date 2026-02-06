@@ -13,3 +13,7 @@ type User struct {
 
 	Reminders []*Reminder `json:"reminders,omitempty" gorm:"constraint:OnDelete:CASCADE"`
 }
+
+func (User) TableName() string {
+	return "Users"
+}

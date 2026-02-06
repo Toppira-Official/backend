@@ -15,6 +15,16 @@ func NewSignUpHandler(createUserUsecase userUsecase.CreateUserUsecase) *SignUpHa
 	return &SignUpHandler{createUserUsecase: createUserUsecase}
 }
 
+// SignUpWithEmailPassword godoc
+//
+//	@Summary	sign up with email and password
+//	@Tags		Authentication
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	SignUpWithEmailPasswordOutput
+//	@Failure	400	{object}	SignUpWithEmailPasswordOutput
+//	@Failure	500	{object}	SignUpWithEmailPasswordOutput
+//	@Router		/auth/sign-up-with-user-password [post]
 func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 	var input SignUpWithEmailPasswordInput
 	if err := c.ShouldBindJSON(&input); err != nil {

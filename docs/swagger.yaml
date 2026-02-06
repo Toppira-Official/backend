@@ -1,0 +1,41 @@
+definitions:
+  handler.SignUpWithEmailPasswordOutput:
+    properties:
+      data:
+        additionalProperties: {}
+        type: object
+      message:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: AliMoradi0Business@gmail.com
+    name: Ali Moradi
+  description: Toppira APIs Documents.
+  title: Toppira APIs
+  version: "1.0"
+paths:
+  /auth/sign-up-with-user-password:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+      summary: sign up with email and password
+      tags:
+      - Authentication
+swagger: "2.0"

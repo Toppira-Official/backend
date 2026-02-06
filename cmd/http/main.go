@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Toppira-Official/backend/internal/configs"
+	"github.com/Toppira-Official/backend/internal/modules/user"
 	"github.com/Toppira-Official/backend/internal/scripts"
 	"go.uber.org/fx"
 	"go.uber.org/fx/fxevent"
@@ -20,6 +21,7 @@ func main() {
 			}),
 			configs.Module,
 			scripts.Module,
+			user.Module,
 		).
 		Run()
 }

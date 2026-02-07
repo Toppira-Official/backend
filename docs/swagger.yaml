@@ -1,5 +1,30 @@
 definitions:
-  handler.SignUpWithEmailPasswordInput:
+  github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto:
+    properties:
+      data:
+        additionalProperties: {}
+        type: object
+    type: object
+  github_com_Toppira-Official_backend_internal_shared_errors.ClientError:
+    properties:
+      error:
+        $ref: '#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ErrCode'
+    type: object
+  github_com_Toppira-Official_backend_internal_shared_errors.ErrCode:
+    enum:
+    - SERVER_INTERNAL_ERROR
+    - SERVER_NOT_RESPONDING
+    - USER_INVALID_DATA
+    - USER_ALREADY_EXISTS
+    - USER_NOT_FOUND
+    type: string
+    x-enum-varnames:
+    - ErrServerInternalError
+    - ErrServerNotResponding
+    - ErrUserInvalidData
+    - ErrUserAlreadyExists
+    - ErrUserNotFound
+  internal_modules_auth_handler.SignUpWithEmailPasswordInput:
     properties:
       email:
         type: string
@@ -9,14 +34,6 @@ definitions:
     required:
     - email
     - password
-    type: object
-  handler.SignUpWithEmailPasswordOutput:
-    properties:
-      data:
-        additionalProperties: {}
-        type: object
-      message:
-        type: string
     type: object
 host: localhost:3000
 info:
@@ -37,22 +54,22 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/handler.SignUpWithEmailPasswordInput'
+          $ref: '#/definitions/internal_modules_auth_handler.SignUpWithEmailPasswordInput'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+            $ref: '#/definitions/github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+            $ref: '#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.SignUpWithEmailPasswordOutput'
+            $ref: '#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError'
       summary: sign up with email and password
       tags:
       - Authentication

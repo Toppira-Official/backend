@@ -37,7 +37,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/handler.SignUpWithEmailPasswordInput"
+                            "$ref": "#/definitions/internal_modules_auth_handler.SignUpWithEmailPasswordInput"
                         }
                     }
                 ],
@@ -45,19 +45,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.SignUpWithEmailPasswordOutput"
+                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.SignUpWithEmailPasswordOutput"
+                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/handler.SignUpWithEmailPasswordOutput"
+                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError"
                         }
                     }
                 }
@@ -65,7 +65,41 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "handler.SignUpWithEmailPasswordInput": {
+        "github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "additionalProperties": {}
+                }
+            }
+        },
+        "github_com_Toppira-Official_backend_internal_shared_errors.ClientError": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ErrCode"
+                }
+            }
+        },
+        "github_com_Toppira-Official_backend_internal_shared_errors.ErrCode": {
+            "type": "string",
+            "enum": [
+                "SERVER_INTERNAL_ERROR",
+                "SERVER_NOT_RESPONDING",
+                "USER_INVALID_DATA",
+                "USER_ALREADY_EXISTS",
+                "USER_NOT_FOUND"
+            ],
+            "x-enum-varnames": [
+                "ErrServerInternalError",
+                "ErrServerNotResponding",
+                "ErrUserInvalidData",
+                "ErrUserAlreadyExists",
+                "ErrUserNotFound"
+            ]
+        },
+        "internal_modules_auth_handler.SignUpWithEmailPasswordInput": {
             "type": "object",
             "required": [
                 "email",
@@ -78,18 +112,6 @@ const docTemplate = `{
                 "password": {
                     "type": "string",
                     "minLength": 8
-                }
-            }
-        },
-        "handler.SignUpWithEmailPasswordOutput": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object",
-                    "additionalProperties": {}
-                },
-                "message": {
-                    "type": "string"
                 }
             }
         }

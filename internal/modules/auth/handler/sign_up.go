@@ -10,21 +10,21 @@ import (
 	"github.com/Toppira-Official/backend/internal/shared/dto"
 	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 )
 
 type SignUpHandler struct {
 	createUserUsecase   userUsecase.CreateUserUsecase
 	hashPasswordUsecase authUsecase.HashPasswordUsecase
 	generateJwtUsecase  authUsecase.GenerateJwtUsecase
-	logger              *zap.Logger
 }
 
 func NewSignUpHandler(createUserUsecase userUsecase.CreateUserUsecase,
-	hashPasswordUsecase authUsecase.HashPasswordUsecase) *SignUpHandler {
+	hashPasswordUsecase authUsecase.HashPasswordUsecase,
+	generateJwtUsecase authUsecase.GenerateJwtUsecase) *SignUpHandler {
 	return &SignUpHandler{
 		createUserUsecase:   createUserUsecase,
 		hashPasswordUsecase: hashPasswordUsecase,
+		generateJwtUsecase:  generateJwtUsecase,
 	}
 }
 

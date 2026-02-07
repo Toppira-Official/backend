@@ -12,6 +12,8 @@ var Module = fx.Module(
 		handler.NewSignUpHandler,
 		usecase.NewCreateUserUsecase,
 		usecase.NewVerifyPasswordUsecase,
+		usecase.NewGenerateJwtUsecase,
+		usecase.NewVerifyJwtUsecase,
 	),
 	fx.Invoke(handler.RegisterRoutes),
 )

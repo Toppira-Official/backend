@@ -18,8 +18,8 @@ type generateJwtUsecase struct {
 	envs configs.Environments
 }
 
-func NewGenerateJwtUsecase() GenerateJwtUsecase {
-	return &generateJwtUsecase{}
+func NewGenerateJwtUsecase(envs configs.Environments) GenerateJwtUsecase {
+	return &generateJwtUsecase{envs: envs}
 }
 
 func (uc *generateJwtUsecase) Execute(ctx context.Context, id string) (string, error) {

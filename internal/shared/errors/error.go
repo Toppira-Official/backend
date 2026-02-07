@@ -1,10 +1,10 @@
 package errors
 
-type ErrCode string
+type ErrCode string // @name ErrCode
 
 type ClientError struct {
 	Code ErrCode `json:"error" example:"SERVER_NOT_RESPONDING"`
-}
+} // @name ClientError
 type AppError struct {
 	ClientError
 	Err error

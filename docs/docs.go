@@ -37,7 +37,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/internal_modules_auth_handler.SignUpWithEmailPasswordInput"
+                            "$ref": "#/definitions/SignUpWithEmailPasswordInput"
                         }
                     }
                 ],
@@ -45,19 +45,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto"
+                            "$ref": "#/definitions/HttpOutput"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError"
+                            "$ref": "#/definitions/ClientError"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ClientError"
+                            "$ref": "#/definitions/ClientError"
                         }
                     }
                 }
@@ -65,51 +65,50 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "github_com_Toppira-Official_backend_internal_shared_dto.HttpOutputDto": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "description": "swagger:example {\"data\":{\"id\":\"123\",\"email\":\"user@example.com\"}}",
-                    "type": "object",
-                    "additionalProperties": {}
-                }
-            }
-        },
-        "github_com_Toppira-Official_backend_internal_shared_errors.ClientError": {
+        "ClientError": {
             "type": "object",
             "properties": {
                 "error": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/github_com_Toppira-Official_backend_internal_shared_errors.ErrCode"
+                            "$ref": "#/definitions/ErrCode"
                         }
                     ],
                     "example": "SERVER_NOT_RESPONDING"
                 }
             }
         },
-        "github_com_Toppira-Official_backend_internal_shared_errors.ErrCode": {
+        "ErrCode": {
             "type": "string",
             "enum": [
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
-                "SERVER_INTERNAL_ERROR",
-                "SERVER_NOT_RESPONDING",
                 "AUTH_INVALID_TOKEN",
-                "AUTH_EXPIRED_TOKEN"
+                "AUTH_EXPIRED_TOKEN",
+                "SERVER_INTERNAL_ERROR",
+                "SERVER_NOT_RESPONDING"
             ],
             "x-enum-varnames": [
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
-                "ErrServerInternalError",
-                "ErrServerNotResponding",
                 "ErrAuthInvalidToken",
-                "ErrAuthExpiredToken"
+                "ErrAuthExpiredToken",
+                "ErrServerInternalError",
+                "ErrServerNotResponding"
             ]
         },
-        "internal_modules_auth_handler.SignUpWithEmailPasswordInput": {
+        "HttpOutput": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "additionalProperties": {}
+                }
+            }
+        },
+        "SignUpWithEmailPasswordInput": {
             "type": "object",
             "required": [
                 "email",

@@ -1,5 +1,5 @@
 package dto
 
-type HttpOutputDto struct {
+type HttpOutput struct {
 	Data map[string]any `json:"data"`
-}
+} // @name HttpOutput

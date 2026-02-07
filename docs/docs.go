@@ -89,14 +89,18 @@ const docTemplate = `{
                 "SERVER_NOT_RESPONDING",
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
-                "USER_NOT_FOUND"
+                "USER_NOT_FOUND",
+                "AUTH_INVALID_TOKEN",
+                "AUTH_EXPIRED_TOKEN"
             ],
             "x-enum-varnames": [
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
-                "ErrUserNotFound"
+                "ErrUserNotFound",
+                "ErrAuthInvalidToken",
+                "ErrAuthExpiredToken"
             ]
         },
         "internal_modules_auth_handler.SignUpWithEmailPasswordInput": {

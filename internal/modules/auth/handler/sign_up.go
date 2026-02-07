@@ -2,6 +2,7 @@ package handler
 
 import (
 	"net/http"
+	"strconv"
 	"strings"
 
 	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
@@ -15,6 +16,7 @@ import (
 type SignUpHandler struct {
 	createUserUsecase   userUsecase.CreateUserUsecase
 	hashPasswordUsecase authUsecase.HashPasswordUsecase
+	generateJwtUsecase  authUsecase.GenerateJwtUsecase
 	logger              *zap.Logger
 }
 
@@ -60,9 +62,17 @@ func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 		return
 	}
 
+	userIDString := strconv.Itoa(int(user.ID))
+	accessToken, err := hl.generateJwtUsecase.Execute(ctx, userIDString)
+	if err != nil {
+		c.Error(err)
+		return
+	}
+
 	c.JSON(http.StatusOK, dto.HttpOutputDto{
 		Data: map[string]any{
-			"user": user,
+			"user":         user,
+			"access_token": accessToken,
 		}},
 	)
 }

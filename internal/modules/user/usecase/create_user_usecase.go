@@ -4,15 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/Toppira-Official/backend/internal/domain/constants"
 	"github.com/Toppira-Official/backend/internal/domain/entities"
+	apperrors "github.com/Toppira-Official/backend/internal/domain/errors"
 	"github.com/Toppira-Official/backend/internal/domain/repositories"
-	"go.uber.org/zap"
 	"gorm.io/gorm"
-)
-
-var (
-	ErrUserAlreadyExists = errors.New("user already exists")
 )
 
 type CreateUserUsecase interface {
@@ -20,25 +15,22 @@ type CreateUserUsecase interface {
 }
 
 type createUserUsecase struct {
-	repo   *repositories.Query
-	logger *zap.Logger
+	repo *repositories.Query
 }
 
-func NewCreateUserUsecase(repo *repositories.Query, logger *zap.Logger) CreateUserUsecase {
-	return &createUserUsecase{repo: repo, logger: logger}
+func NewCreateUserUsecase(repo *repositories.Query) CreateUserUsecase {
+	return &createUserUsecase{repo: repo}
 }
 
 func (uc *createUserUsecase) Execute(ctx context.Context, input *entities.User) (*entities.User, error) {
 	user := input
 	err := uc.repo.User.WithContext(ctx).Save(user)
 	if err != nil {
-		uc.logger.Error("failed to create user", zap.Error(err))
-
 		if errors.Is(err, gorm.ErrDuplicatedKey) {
-			return nil, ErrUserAlreadyExists
+			return nil, apperrors.E(apperrors.ErrUserAlreadyExists, err)
 		}
 
-		return nil, constants.ErrInternalServer
+		return nil, apperrors.E(apperrors.ErrServerNotResponding, err)
 	}
 
 	return user, nil

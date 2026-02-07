@@ -2,26 +2,28 @@ package errors
 
 type ErrCode string
 
-func (e ErrCode) Error() string {
-	return string(e)
+type ClientError struct {
+	Code ErrCode
+}
+type AppError struct {
+	ClientError
+	Err error
 }
 
-type AppError struct {
-	Code    ErrCode
-	Message string
-	Err     error
+func E(code ErrCode, err ...error) *AppError {
+	if len(err) == 0 {
+		return &AppError{ClientError: ClientError{Code: code}}
+	}
+	return &AppError{ClientError: ClientError{Code: code}, Err: err[0]}
 }
 
 func (e *AppError) Error() string {
-	if e.Message != "" {
-		return e.Message
-	}
 	if e.Err != nil {
 		return e.Err.Error()
 	}
 	return string(e.Code)
 }
 
-func (e *AppError) Unwrap() error {
-	return e.Err
+func (e *AppError) Client() ClientError {
+	return e.ClientError
 }

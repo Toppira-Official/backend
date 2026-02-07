@@ -7,11 +7,6 @@ type SignUpWithEmailPasswordInput struct {
 	Password string `binding:"required,min=8" json:"password"`
 }
 
-type SignUpWithEmailPasswordOutput struct {
-	Message string         `json:"message"`
-	Data    map[string]any `json:"data,omitempty"`
-}
-
 func (in *SignUpWithEmailPasswordInput) MapUser() *entities.User {
 	return &entities.User{
 		Email:    in.Email,

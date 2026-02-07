@@ -4,6 +4,15 @@ linters:
     - errcheck
     - staticcheck
     - unused
+    - ineffassign
+    - typecheck
+    - gofmt
+    - goimports
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
 
 run:
   tests: true

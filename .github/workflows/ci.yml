@@ -30,23 +30,5 @@ jobs:
           go install golang.org/x/tools/cmd/goimports@latest
           echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
-      - name: Run gofmt
-        run: |
-          fmt_files=$(gofmt -l .)
-          if [ -n "$fmt_files" ]; then
-            echo "Go files are not formatted:"
-            echo "$fmt_files"
-            exit 1
-          fi
-
-      - name: Run goimports
-        run: |
-          imp_files=$(goimports -l .)
-          if [ -n "$imp_files" ]; then
-            echo "Go import statements need fixing:"
-            echo "$imp_files"
-            exit 1
-          fi
-
       - name: Run golangci-lint
         run: golangci-lint run

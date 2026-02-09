@@ -33,6 +33,3 @@ jobs:
 
       - name: GolangCI-Lint
         run: golangci-lint run
-
-      - name: Run golangci-lint
-        run: golangci-lint run

@@ -1,6 +1,7 @@
 package user
 
 import (
+	"github.com/Toppira-Official/backend/internal/modules/user/handler"
 	"github.com/Toppira-Official/backend/internal/modules/user/usecase"
 	"go.uber.org/fx"
 )
@@ -8,8 +9,10 @@ import (
 var Module = fx.Module(
 	"user",
 	fx.Provide(
+		handler.NewGetMeHandler,
 		usecase.NewCreateUserUsecase,
 		usecase.NewFindUserByEmailUsecase,
 		usecase.NewFindUserByIDUsecase,
 	),
+	fx.Invoke(RegisterRoutes),
 )

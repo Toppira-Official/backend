@@ -10,22 +10,24 @@ definitions:
     enum:
     - AUTH_INVALID_TOKEN
     - AUTH_EXPIRED_TOKEN
+    - AUTH_TOKEN_NOT_PROVIDED
     - AUTH_INVALID_EMAIL_OR_PASSWORD
+    - SERVER_INTERNAL_ERROR
+    - SERVER_NOT_RESPONDING
     - USER_INVALID_DATA
     - USER_ALREADY_EXISTS
     - USER_NOT_FOUND
-    - SERVER_INTERNAL_ERROR
-    - SERVER_NOT_RESPONDING
     type: string
     x-enum-varnames:
     - ErrAuthInvalidToken
     - ErrAuthExpiredToken
+    - ErrAuthTokenNotProvided
     - ErrAuthInvalidEmailOrPassword
+    - ErrServerInternalError
+    - ErrServerNotResponding
     - ErrUserInvalidData
     - ErrUserAlreadyExists
     - ErrUserNotFound
-    - ErrServerInternalError
-    - ErrServerNotResponding
   HttpOutput:
     properties:
       data:
@@ -143,4 +145,34 @@ paths:
       summary: sign up with email and password
       tags:
       - Authentication
+  /user/me:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/HttpOutput'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ClientError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ClientError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ClientError'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ClientError'
+      summary: get my(user) data
+      tags:
+      - User
 swagger: "2.0"

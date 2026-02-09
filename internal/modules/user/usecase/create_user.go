@@ -3,6 +3,7 @@ package usecase
 import (
 	"context"
 	"errors"
+	"strings"
 
 	"github.com/Toppira-Official/backend/internal/shared/entities"
 	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
@@ -24,6 +25,9 @@ func NewCreateUserUsecase(repo *repositories.Query) CreateUserUsecase {
 
 func (uc *createUserUsecase) Execute(ctx context.Context, input *entities.User) (*entities.User, error) {
 	user := input
+	if user.Email != "" {
+		user.Email = strings.ToLower(user.Email)
+	}
 	err := uc.repo.User.WithContext(ctx).Save(user)
 	if err != nil {
 		if errors.Is(err, gorm.ErrDuplicatedKey) {

@@ -10,10 +10,11 @@ var Module = fx.Module(
 	"auth",
 	fx.Provide(
 		handler.NewSignUpHandler,
+		handler.NewLoginHandler,
 		usecase.NewCreateUserUsecase,
 		usecase.NewVerifyPasswordUsecase,
 		usecase.NewGenerateJwtUsecase,
 		usecase.NewVerifyJwtUsecase,
 	),
-	fx.Invoke(handler.RegisterRoutes),
+	fx.Invoke(RegisterRoutes),
 )

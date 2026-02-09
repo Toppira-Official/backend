@@ -18,6 +18,51 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/auth/login-with-user-password": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "login with email and password",
+                "parameters": [
+                    {
+                        "description": "Login Input",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LoginWithEmailPasswordInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/HttpOutput"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    }
+                }
+            }
+        },
         "/auth/sign-up-with-user-password": {
             "post": {
                 "consumes": [
@@ -81,22 +126,24 @@ const docTemplate = `{
         "ErrCode": {
             "type": "string",
             "enum": [
-                "USER_INVALID_DATA",
-                "USER_ALREADY_EXISTS",
-                "USER_NOT_FOUND",
+                "AUTH_INVALID_TOKEN",
+                "AUTH_EXPIRED_TOKEN",
+                "AUTH_INVALID_EMAIL_OR_PASSWORD",
                 "SERVER_INTERNAL_ERROR",
                 "SERVER_NOT_RESPONDING",
-                "AUTH_INVALID_TOKEN",
-                "AUTH_EXPIRED_TOKEN"
+                "USER_INVALID_DATA",
+                "USER_ALREADY_EXISTS",
+                "USER_NOT_FOUND"
             ],
             "x-enum-varnames": [
-                "ErrUserInvalidData",
-                "ErrUserAlreadyExists",
-                "ErrUserNotFound",
+                "ErrAuthInvalidToken",
+                "ErrAuthExpiredToken",
+                "ErrAuthInvalidEmailOrPassword",
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
-                "ErrAuthInvalidToken",
-                "ErrAuthExpiredToken"
+                "ErrUserInvalidData",
+                "ErrUserAlreadyExists",
+                "ErrUserNotFound"
             ]
         },
         "HttpOutput": {
@@ -105,6 +152,25 @@ const docTemplate = `{
                 "data": {
                     "type": "object",
                     "additionalProperties": {}
+                }
+            }
+        },
+        "LoginWithEmailPasswordInput": {
+            "type": "object",
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "user@example.com"
+                },
+                "password": {
+                    "type": "string",
+                    "maxLength": 72,
+                    "minLength": 8,
+                    "example": "StrongPassword1234"
                 }
             }
         },

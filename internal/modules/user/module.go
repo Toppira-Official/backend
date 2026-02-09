@@ -9,5 +9,6 @@ var Module = fx.Module(
 	"user",
 	fx.Provide(
 		usecase.NewCreateUserUsecase,
+		usecase.NewFindUserByEmailUsecase,
 	),
 )

@@ -6,6 +6,8 @@ type User struct {
 	Email string  `gorm:"uniqueIndex;not null" json:"email"`
 	Phone *string `gorm:"uniqueIndex" json:"phone,omitempty"`
 
+	IsActive bool `gorm:"not null" json:"is_active"`
+
 	Name           *string `json:"name,omitempty"`
 	ProfilePicture *string `json:"profile_picture,omitempty"`
 

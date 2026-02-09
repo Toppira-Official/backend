@@ -77,19 +77,19 @@
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
-                "AUTH_INVALID_TOKEN",
-                "AUTH_EXPIRED_TOKEN",
                 "SERVER_INTERNAL_ERROR",
-                "SERVER_NOT_RESPONDING"
+                "SERVER_NOT_RESPONDING",
+                "AUTH_INVALID_TOKEN",
+                "AUTH_EXPIRED_TOKEN"
             ],
             "x-enum-varnames": [
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
-                "ErrAuthInvalidToken",
-                "ErrAuthExpiredToken",
                 "ErrServerInternalError",
-                "ErrServerNotResponding"
+                "ErrServerNotResponding",
+                "ErrAuthInvalidToken",
+                "ErrAuthExpiredToken"
             ]
         },
         "HttpOutput": {

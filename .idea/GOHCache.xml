@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="AppError">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/errors/error.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Base">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/entities/base.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ClientError">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/errors/error.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Environments">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/configs/environments.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HttpOutput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/dto/http.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HttpServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/configs/http_server.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Query">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="QueryTx">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Reminder">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/entities/reminder.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SignUpHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SignUpWithEmailPasswordInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_dto.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/entities/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="createUserUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/create_user_usecase.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="generateJwtUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/generate_jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="hashPasswordUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/hash_password.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="queryCtx">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="reminder">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="reminderBelongsToUser">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="reminderBelongsToUserTx">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="reminderDo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="user">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="userDo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="userHasManyReminders">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="userHasManyRemindersTx">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="verifyJwtUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_jwt.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="verifyPasswordUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_password.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/cmd/gen/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558848" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/cmd/http/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558848" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/docs/docs.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558848" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/db.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/environments.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+              <option name="schema">
+                <list>
+                  <option value="Environments" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/http_server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+              <option name="schema">
+                <list>
+                  <option value="HttpServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/logger.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/query.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558849" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/router.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="SignUpHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_dto.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="SignUpWithEmailPasswordInput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/generate_jwt.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="generateJwtUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/hash_password.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="hashPasswordUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_jwt.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="verifyJwtUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_password.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+              <option name="schema">
+                <list>
+                  <option value="verifyPasswordUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558850" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/create_user_usecase.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+              <option name="schema">
+                <list>
+                  <option value="createUserUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/scripts/load_migrations.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/scripts/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/constants/reminder_statuses.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/dto/http.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+              <option name="schema">
+                <list>
+                  <option value="HttpOutput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/entities/base.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+              <option name="schema">
+                <list>
+                  <option value="Base" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/entities/reminder.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558851" />
+              <option name="schema">
+                <list>
+                  <option value="Reminder" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/entities/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+              <option name="schema">
+                <list>
+                  <option value="User" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/auth.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/error.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+              <option name="schema">
+                <list>
+                  <option value="ClientError" />
+                  <option value="AppError" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/http.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/shared.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/middlewares/error_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/repositories/gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558852" />
+              <option name="schema">
+                <list>
+                  <option value="Query" />
+                  <option value="queryCtx" />
+                  <option value="QueryTx" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558853" />
+              <option name="schema">
+                <list>
+                  <option value="reminder" />
+                  <option value="reminderBelongsToUser" />
+                  <option value="reminderBelongsToUserTx" />
+                  <option value="reminderDo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770535558853" />
+              <option name="schema">
+                <list>
+                  <option value="user" />
+                  <option value="userHasManyReminders" />
+                  <option value="userHasManyRemindersTx" />
+                  <option value="userDo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="app_error" value="AppError" />
+        <entry key="base" value="Base" />
+        <entry key="client_error" value="ClientError" />
+        <entry key="create_user_usecase" value="createUserUsecase" />
+        <entry key="environments" value="Environments" />
+        <entry key="generate_jwt_usecase" value="generateJwtUsecase" />
+        <entry key="hash_password_usecase" value="hashPasswordUsecase" />
+        <entry key="http_output" value="HttpOutput" />
+        <entry key="http_server" value="HttpServer" />
+        <entry key="query" value="Query" />
+        <entry key="query_ctx" value="queryCtx" />
+        <entry key="query_tx" value="QueryTx" />
+        <entry key="reminder" value="reminder" />
+        <entry key="reminder_belongs_to_user" value="reminderBelongsToUser" />
+        <entry key="reminder_belongs_to_user_tx" value="reminderBelongsToUserTx" />
+        <entry key="reminder_do" value="reminderDo" />
+        <entry key="sign_up_handler" value="SignUpHandler" />
+        <entry key="sign_up_with_email_password_input" value="SignUpWithEmailPasswordInput" />
+        <entry key="user" value="user" />
+        <entry key="user_do" value="userDo" />
+        <entry key="user_has_many_reminders" value="userHasManyReminders" />
+        <entry key="user_has_many_reminders_tx" value="userHasManyRemindersTx" />
+        <entry key="verify_jwt_usecase" value="verifyJwtUsecase" />
+        <entry key="verify_password_usecase" value="verifyPasswordUsecase" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1770753641855" />
+  </component>
+</project>

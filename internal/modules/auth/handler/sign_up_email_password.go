@@ -37,7 +37,7 @@ func NewSignUpHandler(
 //	@Tags		Authentication
 //	@Accept		json
 //	@Produce	json
-//	@Param		body	body		input.SignUpWithEmailPasswordInput	true	"Sign Up Input"
+//	@Param		body	body		dto.SignUpWithEmailPasswordInput	true	"Sign Up Input"
 //	@Success	201		{object}	output.HttpOutput
 //	@Failure	400		{object}	apperrors.ClientError
 //	@Failure	409		{object}	apperrors.ClientError

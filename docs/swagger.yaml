@@ -62,6 +62,20 @@ definitions:
     - email
     - password
     type: object
+  UpdateMeInput:
+    properties:
+      name:
+        example: John Doe
+        type: string
+      password:
+        example: securepassword
+        maxLength: 72
+        minLength: 8
+        type: string
+      phone:
+        example: "09123456789"
+        type: string
+    type: object
 host: localhost:3000
 info:
   contact:
@@ -175,6 +189,44 @@ paths:
       security:
       - BearerAuth: []
       summary: get my(user) data
+      tags:
+      - User
+    patch:
+      consumes:
+      - application/json
+      parameters:
+      - description: Update Me Input
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateMeInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/HttpOutput'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ClientError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ClientError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ClientError'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ClientError'
+      security:
+      - BearerAuth: []
+      summary: update my(user) data
       tags:
       - User
 securityDefinitions:

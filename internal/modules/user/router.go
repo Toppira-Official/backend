@@ -9,12 +9,14 @@ import (
 type UserHandlers struct {
 	fx.In
 
-	Me         *handler.GetMeHandler
-	GuardLogin gin.HandlerFunc `name:"guard_login"`
+	GetMeHandler    *handler.GetMeHandler
+	UpdateMeHandler *handler.UpdateMeHandler
+	GuardLogin      gin.HandlerFunc `name:"guard_login"`
 }
 
 func RegisterRoutes(engine *gin.Engine, h UserHandlers) {
 	group := engine.Group("/user")
 
-	group.GET("/me", h.GuardLogin, h.Me.GetMyInfo)
+	group.GET("/me", h.GuardLogin, h.GetMeHandler.GetMyInfo)
+	group.PATCH("/me", h.GuardLogin, h.UpdateMeHandler.UpdateMyInfo)
 }

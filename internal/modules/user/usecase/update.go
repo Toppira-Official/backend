@@ -3,6 +3,7 @@ package usecase
 import (
 	"context"
 	"errors"
+	"strings"
 
 	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
 	"github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
@@ -29,8 +30,10 @@ func (uc *updateUserUsecase) Execute(ctx context.Context, input *input.UpdateUse
 	updateData := map[string]any{}
 
 	if input.Name != nil {
-		updateData["name"] = *input.Name
+		name := strings.TrimSpace(*input.Name)
+		updateData["name"] = strings.ToLower(name)
 	}
+
 	if input.Phone != nil {
 		updateData["phone"] = *input.Phone
 	}

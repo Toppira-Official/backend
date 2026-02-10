@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Toppira-Official/backend/internal/modules/user/dto"
+	"github.com/Toppira-Official/backend/internal/modules/user/handler/dto"
 	"github.com/Toppira-Official/backend/internal/modules/user/usecase"
 	userInput "github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
 	output "github.com/Toppira-Official/backend/internal/shared/dto"

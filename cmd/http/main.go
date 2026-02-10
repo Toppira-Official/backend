@@ -5,7 +5,6 @@ import (
 	"github.com/Toppira-Official/backend/internal/configs"
 	"github.com/Toppira-Official/backend/internal/modules/auth"
 	"github.com/Toppira-Official/backend/internal/modules/user"
-	"github.com/Toppira-Official/backend/internal/scripts"
 	"github.com/Toppira-Official/backend/internal/shared/middlewares"
 	"github.com/Toppira-Official/backend/internal/shared/utils"
 	"github.com/gin-gonic/gin"
@@ -43,7 +42,6 @@ func main() {
 				r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 			}),
 			configs.Module,
-			scripts.Module,
 			user.Module,
 			auth.Module,
 			middlewares.Module,

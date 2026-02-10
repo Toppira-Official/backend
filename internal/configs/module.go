@@ -13,4 +13,5 @@ var Module = fx.Module(
 		NewDB,
 		NewQuery,
 	),
+	fx.Invoke(LoadMigrations),
 )

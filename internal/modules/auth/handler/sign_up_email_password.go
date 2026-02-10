@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Toppira-Official/backend/internal/modules/auth/dto"
+	"github.com/Toppira-Official/backend/internal/modules/auth/handler/dto"
 	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
 	userUsecase "github.com/Toppira-Official/backend/internal/modules/user/usecase"
 	userInput "github.com/Toppira-Official/backend/internal/modules/user/usecase/input"

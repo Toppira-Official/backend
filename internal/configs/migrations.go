@@ -1,4 +1,4 @@
-package scripts
+package configs
 
 import (
 	"github.com/Toppira-Official/backend/internal/shared/entities"

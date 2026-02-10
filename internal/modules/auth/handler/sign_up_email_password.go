@@ -4,9 +4,10 @@ import (
 	"net/http"
 	"strconv"
 
-	input "github.com/Toppira-Official/backend/internal/modules/auth/dto"
+	"github.com/Toppira-Official/backend/internal/modules/auth/dto"
 	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
 	userUsecase "github.com/Toppira-Official/backend/internal/modules/user/usecase"
+	userInput "github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
 	output "github.com/Toppira-Official/backend/internal/shared/dto"
 	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
 	"github.com/gin-gonic/gin"
@@ -46,22 +47,17 @@ func NewSignUpHandler(
 func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 	ctx := c.Request.Context()
 
-	var input input.SignUpWithEmailPasswordInput
+	var input dto.SignUpWithEmailPasswordInput
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.Error(apperrors.E(apperrors.ErrUserInvalidData, err))
 		return
 	}
 
-	hashedPassword, err := hl.hashPasswordUsecase.Execute(ctx, []byte(input.Password))
-	if err != nil {
-		c.Error(err)
-		return
+	usecaseInput := &userInput.CreateUserInput{
+		Email:    input.Email,
+		Password: &input.Password,
 	}
-
-	input.Password = hashedPassword
-	user := input.MapUser()
-	user.IsActive = false
-	savedUser, err := hl.createUserUsecase.Execute(ctx, user)
+	savedUser, err := hl.createUserUsecase.Execute(ctx, usecaseInput)
 	if err != nil {
 		c.Error(err)
 		return
@@ -73,6 +69,8 @@ func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 		c.Error(err)
 		return
 	}
+
+	savedUser.Password = nil
 
 	c.JSON(http.StatusCreated, output.HttpOutput{
 		Data: map[string]any{

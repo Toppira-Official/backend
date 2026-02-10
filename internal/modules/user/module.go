@@ -11,6 +11,7 @@ var Module = fx.Module(
 	fx.Provide(
 		handler.NewGetMeHandler,
 		usecase.NewCreateUserUsecase,
+		usecase.NewUpdateUserUsecase,
 		usecase.NewFindUserByEmailUsecase,
 		usecase.NewFindUserByIDUsecase,
 	),

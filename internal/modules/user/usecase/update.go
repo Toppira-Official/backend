@@ -3,9 +3,9 @@ package usecase
 import (
 	"context"
 	"errors"
-	"strings"
 
 	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
+	"github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
 	"github.com/Toppira-Official/backend/internal/shared/entities"
 	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
 	"github.com/Toppira-Official/backend/internal/shared/repositories"
@@ -13,7 +13,7 @@ import (
 )
 
 type UpdateUserUsecase interface {
-	Execute(ctx context.Context, input *entities.User) (*entities.User, error)
+	Execute(ctx context.Context, input *input.UpdateUserInput) (*entities.User, error)
 }
 
 type updateUserUsecase struct {
@@ -25,26 +25,42 @@ func NewUpdateUserUsecase(repo *repositories.Query, hashPassword authUsecase.Has
 	return &updateUserUsecase{repo: repo, hashPassword: hashPassword}
 }
 
-func (uc *updateUserUsecase) Execute(ctx context.Context, input *entities.User) (*entities.User, error) {
-	user := input
-	if user.Email != "" {
-		user.Email = strings.ToLower(user.Email)
+func (uc *updateUserUsecase) Execute(ctx context.Context, input *input.UpdateUserInput) (*entities.User, error) {
+	updateData := map[string]any{}
+
+	if input.Name != nil {
+		updateData["name"] = *input.Name
 	}
-	if user.Password != nil {
-		password, err := uc.hashPassword.Execute(ctx, []byte(*user.Password))
+	if input.Phone != nil {
+		updateData["phone"] = *input.Phone
+	}
+
+	if input.Password != nil {
+		hashed, err := uc.hashPassword.Execute(ctx, []byte(*input.Password))
 		if err != nil {
 			return nil, apperrors.E(apperrors.ErrServerInternalError, err)
 		}
-		user.Password = &password
+		updateData["password"] = hashed
 	}
-	err := uc.repo.User.WithContext(ctx).Save(user)
+
+	res, err := uc.repo.User.WithContext(ctx).
+		Where(uc.repo.User.BaseID.Eq(input.ID)).
+		Updates(updateData)
 	if err != nil {
 		if errors.Is(err, gorm.ErrDuplicatedKey) {
 			return nil, apperrors.E(apperrors.ErrUserAlreadyExists, err)
 		}
-
 		return nil, apperrors.E(apperrors.ErrServerNotResponding, err)
 	}
 
-	return user, nil
+	if res.RowsAffected == 0 {
+		return nil, apperrors.E(apperrors.ErrUserNotFound, nil)
+	}
+
+	updatedUser, err := uc.repo.User.WithContext(ctx).Where(uc.repo.User.BaseID.Eq(input.ID)).First()
+	if err != nil {
+		return nil, apperrors.E(apperrors.ErrServerNotResponding, err)
+	}
+
+	return updatedUser, nil
 }

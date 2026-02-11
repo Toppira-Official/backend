@@ -16,6 +16,8 @@ type Environments struct {
 	JWT_SECRET           Environment
 	JWT_EXPIRES_IN_HOURS Environment
 	FILES_PATH           Environment
+	GOOGLE_CLIENT_ID     Environment
+	GOOGLE_CLIENT_SECRET Environment
 }
 
 func LoadEnvironmentsFromEnvFile() {
@@ -32,6 +34,8 @@ func GetEnvironments() Environments {
 		JWT_SECRET:           Environment(os.Getenv("JWT_SECRET")).orPanic(),
 		JWT_EXPIRES_IN_HOURS: Environment(os.Getenv("JWT_EXPIRES_IN_HOURS")).orPanic(),
 		FILES_PATH:           Environment(os.Getenv("FILES_PATH")).orDefault("static"),
+		GOOGLE_CLIENT_ID:     Environment(os.Getenv("GOOGLE_CLIENT_ID")).orPanic(),
+		GOOGLE_CLIENT_SECRET: Environment(os.Getenv("GOOGLE_CLIENT_SECRET")).orPanic(),
 	}
 }
 

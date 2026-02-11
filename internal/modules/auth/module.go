@@ -15,7 +15,7 @@ var Module = fx.Module(
 		usecase.NewVerifyPasswordUsecase,
 		usecase.NewGenerateJwtUsecase,
 		usecase.NewVerifyJwtUsecase,
-		usecase.NewGoogleOauthUsecase,
+		usecase.NewGoogleOauthRedirectURLUsecase,
 	),
 	fx.Invoke(RegisterRoutes),
 )

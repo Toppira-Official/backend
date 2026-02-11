@@ -10,19 +10,19 @@ import (
 	"golang.org/x/oauth2/google"
 )
 
-type GoogleOauthUsecase interface {
+type GoogleOauthRedirectURLUsecase interface {
 	Execute(ctx context.Context) (redirectUrl, state string)
 }
 
-type googleOauthUsecase struct {
+type googleOauthRedirectURLUsecase struct {
 	envs configs.Environments
 }
 
-func NewGoogleOauthUsecase(envs configs.Environments) GoogleOauthUsecase {
-	return &googleOauthUsecase{envs: envs}
+func NewGoogleOauthRedirectURLUsecase(envs configs.Environments) GoogleOauthRedirectURLUsecase {
+	return &googleOauthRedirectURLUsecase{envs: envs}
 }
 
-func (uc *googleOauthUsecase) Execute(ctx context.Context) (redirectUrl, state string) {
+func (uc *googleOauthRedirectURLUsecase) Execute(ctx context.Context) (redirectUrl, state string) {
 	googleOauthConfig := &oauth2.Config{
 		RedirectURL:  uc.envs.GOOGLE_REDIRECT_URL.String(),
 		ClientID:     uc.envs.GOOGLE_CLIENT_ID.String(),

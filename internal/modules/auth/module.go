@@ -11,6 +11,7 @@ var Module = fx.Module(
 	fx.Provide(
 		handler.NewSignUpHandler,
 		handler.NewLoginHandler,
+		handler.NewGoogleOauthHandler,
 		usecase.NewCreateUserUsecase,
 		usecase.NewVerifyPasswordUsecase,
 		usecase.NewGenerateJwtUsecase,

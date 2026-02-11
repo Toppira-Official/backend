@@ -18,6 +18,28 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/auth/google-oauth/redirect-url": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "get google oauth redirect url",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/HttpOutput"
+                        }
+                    }
+                }
+            }
+        },
         "/auth/login-with-user-password": {
             "post": {
                 "consumes": [
@@ -261,26 +283,26 @@ const docTemplate = `{
         "ErrCode": {
             "type": "string",
             "enum": [
+                "SERVER_INTERNAL_ERROR",
+                "SERVER_NOT_RESPONDING",
                 "AUTH_INVALID_TOKEN",
                 "AUTH_EXPIRED_TOKEN",
                 "AUTH_TOKEN_NOT_PROVIDED",
                 "AUTH_INVALID_EMAIL_OR_PASSWORD",
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
-                "USER_NOT_FOUND",
-                "SERVER_INTERNAL_ERROR",
-                "SERVER_NOT_RESPONDING"
+                "USER_NOT_FOUND"
             ],
             "x-enum-varnames": [
+                "ErrServerInternalError",
+                "ErrServerNotResponding",
                 "ErrAuthInvalidToken",
                 "ErrAuthExpiredToken",
                 "ErrAuthTokenNotProvided",
                 "ErrAuthInvalidEmailOrPassword",
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
-                "ErrUserNotFound",
-                "ErrServerInternalError",
-                "ErrServerNotResponding"
+                "ErrUserNotFound"
             ]
         },
         "HttpOutput": {

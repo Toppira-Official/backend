@@ -8,6 +8,8 @@ definitions:
     type: object
   ErrCode:
     enum:
+    - SERVER_INTERNAL_ERROR
+    - SERVER_NOT_RESPONDING
     - AUTH_INVALID_TOKEN
     - AUTH_EXPIRED_TOKEN
     - AUTH_TOKEN_NOT_PROVIDED
@@ -15,10 +17,10 @@ definitions:
     - USER_INVALID_DATA
     - USER_ALREADY_EXISTS
     - USER_NOT_FOUND
-    - SERVER_INTERNAL_ERROR
-    - SERVER_NOT_RESPONDING
     type: string
     x-enum-varnames:
+    - ErrServerInternalError
+    - ErrServerNotResponding
     - ErrAuthInvalidToken
     - ErrAuthExpiredToken
     - ErrAuthTokenNotProvided
@@ -26,8 +28,6 @@ definitions:
     - ErrUserInvalidData
     - ErrUserAlreadyExists
     - ErrUserNotFound
-    - ErrServerInternalError
-    - ErrServerNotResponding
   HttpOutput:
     properties:
       data:
@@ -85,6 +85,20 @@ info:
   title: Toppira APIs
   version: "1.0"
 paths:
+  /auth/google-oauth/redirect-url:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/HttpOutput'
+      summary: get google oauth redirect url
+      tags:
+      - Authentication
   /auth/login-with-user-password:
     post:
       consumes:

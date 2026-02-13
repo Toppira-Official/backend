@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )

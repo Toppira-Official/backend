@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/Toppira-Official/backend/internal/modules/user/handler"
-	"github.com/Toppira-Official/backend/internal/modules/user/usecase"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/handler"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 	"go.uber.org/fx"
 )
 

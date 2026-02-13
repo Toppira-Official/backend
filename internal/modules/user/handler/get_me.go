@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
-	output "github.com/Toppira-Official/backend/internal/shared/dto"
-	"github.com/Toppira-Official/backend/internal/shared/entities"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
 )
 

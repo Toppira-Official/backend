@@ -5,11 +5,11 @@ import (
 	"errors"
 	"strings"
 
-	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
-	"github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
-	"github.com/Toppira-Official/backend/internal/shared/entities"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
-	"github.com/Toppira-Official/backend/internal/shared/repositories"
+	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/repositories"
 	"gorm.io/gorm"
 )
 

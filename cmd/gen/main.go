@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Toppira-Official/backend/internal/shared/entities"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 	"gorm.io/gen"
 )
 

@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Toppira-Official/backend/internal/configs"
-	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
-	output "github.com/Toppira-Official/backend/internal/shared/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/configs"
+	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
+	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
 	"github.com/gin-gonic/gin"
 )
 

@@ -5,7 +5,7 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 
-	"github.com/Toppira-Official/backend/internal/configs"
+	"github.com/Toppira-Official/Reminder_Server/internal/configs"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )

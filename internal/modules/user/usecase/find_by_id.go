@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/Toppira-Official/backend/internal/shared/entities"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
-	"github.com/Toppira-Official/backend/internal/shared/repositories"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/repositories"
 	"gorm.io/gorm"
 )
 

@@ -1,4 +1,4 @@
-module github.com/Toppira-Official/backend
+module github.com/Toppira-Official/Reminder_Server
 
 go 1.25.6
 

@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"github.com/Toppira-Official/backend/internal/modules/auth/handler"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/fx"
 )

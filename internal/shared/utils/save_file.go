@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Toppira-Official/backend/internal/configs"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	"github.com/Toppira-Official/Reminder_Server/internal/configs"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 )
 
 type FileSaver struct {

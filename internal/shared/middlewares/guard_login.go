@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"strings"
 
-	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
-	userUsecase "github.com/Toppira-Official/backend/internal/modules/user/usecase"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
+	userUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
 )
 

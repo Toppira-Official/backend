@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"github.com/Toppira-Official/backend/internal/modules/auth/handler"
-	"github.com/Toppira-Official/backend/internal/modules/auth/usecase"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
 	"go.uber.org/fx"
 )
 

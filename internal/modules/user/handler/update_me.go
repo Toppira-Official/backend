@@ -3,12 +3,12 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Toppira-Official/backend/internal/modules/user/handler/dto"
-	"github.com/Toppira-Official/backend/internal/modules/user/usecase"
-	userInput "github.com/Toppira-Official/backend/internal/modules/user/usecase/input"
-	output "github.com/Toppira-Official/backend/internal/shared/dto"
-	"github.com/Toppira-Official/backend/internal/shared/entities"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/handler/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
+	userInput "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
+	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
 )
 

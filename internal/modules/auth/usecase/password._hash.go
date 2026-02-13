@@ -3,7 +3,7 @@ package usecase
 import (
 	"context"
 
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"golang.org/x/crypto/bcrypt"
 )
 

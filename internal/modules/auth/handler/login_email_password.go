@@ -4,12 +4,12 @@ import (
 	"net/http"
 	"strconv"
 
-	input "github.com/Toppira-Official/backend/internal/modules/auth/handler/dto"
-	authUsecase "github.com/Toppira-Official/backend/internal/modules/auth/usecase"
-	userUsecase "github.com/Toppira-Official/backend/internal/modules/user/usecase"
+	input "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
+	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
+	userUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 
-	output "github.com/Toppira-Official/backend/internal/shared/dto"
-	apperrors "github.com/Toppira-Official/backend/internal/shared/errors"
+	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
+	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
 )
 

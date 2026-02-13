@@ -1,12 +1,12 @@
 package main
 
 import (
-	_ "github.com/Toppira-Official/backend/docs"
-	"github.com/Toppira-Official/backend/internal/configs"
-	"github.com/Toppira-Official/backend/internal/modules/auth"
-	"github.com/Toppira-Official/backend/internal/modules/user"
-	"github.com/Toppira-Official/backend/internal/shared/middlewares"
-	"github.com/Toppira-Official/backend/internal/shared/utils"
+	_ "github.com/Toppira-Official/Reminder_Server/docs"
+	"github.com/Toppira-Official/Reminder_Server/internal/configs"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/middlewares"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/utils"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

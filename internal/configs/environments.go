@@ -13,6 +13,11 @@ type Environment string
 type Environments struct {
 	PORT                 Environment
 	MODE                 Environment
+	POSTGRES_USER        Environment
+	POSTGRES_PASSWORD    Environment
+	POSTGRES_HOST        Environment
+	POSTGRES_PORT        Environment
+	POSTGRES_DB          Environment
 	JWT_SECRET           Environment
 	JWT_EXPIRES_IN_HOURS Environment
 	FILES_PATH           Environment
@@ -32,6 +37,11 @@ func GetEnvironments() Environments {
 	return Environments{
 		PORT:                 Environment(os.Getenv("PORT")).orDefault("3000"),
 		MODE:                 Environment(os.Getenv("MODE")).orPanic().mustBeIn("develop", "production"),
+		POSTGRES_USER:        Environment(os.Getenv("POSTGRES_USER")).orPanic(),
+		POSTGRES_PASSWORD:    Environment(os.Getenv("POSTGRES_PASSWORD")).orPanic(),
+		POSTGRES_HOST:        Environment(os.Getenv("POSTGRES_HOST")).orDefault("localhost"),
+		POSTGRES_PORT:        Environment(os.Getenv("POSTGRES_PORT")).orDefault("5432"),
+		POSTGRES_DB:          Environment(os.Getenv("POSTGRES_DB")).orPanic(),
 		JWT_SECRET:           Environment(os.Getenv("JWT_SECRET")).orPanic(),
 		JWT_EXPIRES_IN_HOURS: Environment(os.Getenv("JWT_EXPIRES_IN_HOURS")).orPanic(),
 		FILES_PATH:           Environment(os.Getenv("FILES_PATH")).orDefault("static"),

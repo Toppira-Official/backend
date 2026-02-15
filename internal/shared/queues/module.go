@@ -9,4 +9,5 @@ var Module = fx.Module(
 		NewAsynqServer,
 		NewMux,
 	),
+	fx.Invoke(RunAsynq),
 )

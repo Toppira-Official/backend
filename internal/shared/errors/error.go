@@ -27,3 +27,7 @@ func (e *AppError) Error() string {
 func (e *AppError) Client() ClientError {
 	return e.ClientError
 }
+
+func (e *AppError) Unwrap() error {
+	return e.Err
+}

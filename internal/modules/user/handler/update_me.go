@@ -1,24 +1,31 @@
 package handler
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/handler/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/jobs"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 	userInput "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
 	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/queues"
 	"github.com/gin-gonic/gin"
+	"github.com/hibiken/asynq"
+	"github.com/sony/gobreaker/v2"
 )
 
 type UpdateMeHandler struct {
 	updateUserUsecase usecase.UpdateUserUsecase
+	q                 *queues.Client
 }
 
-func NewUpdateMeHandler(updateUserUsecase usecase.UpdateUserUsecase) *UpdateMeHandler {
+func NewUpdateMeHandler(updateUserUsecase usecase.UpdateUserUsecase, q *queues.Client) *UpdateMeHandler {
 	return &UpdateMeHandler{
 		updateUserUsecase: updateUserUsecase,
+		q:                 q,
 	}
 }
 
@@ -64,15 +71,26 @@ func (hl *UpdateMeHandler) UpdateMyInfo(c *gin.Context) {
 		Phone:    input.Phone,
 	}
 	updatedUser, err := hl.updateUserUsecase.Execute(ctx, usecaseInput)
-	if err != nil {
-		c.Error(err)
+	if err == nil {
+		updatedUser.Password = nil
+		c.JSON(http.StatusOK, output.HttpOutput{
+			Data: map[string]any{
+				"user": updatedUser,
+			},
+		})
+
 		return
 	}
 
-	updatedUser.Password = nil
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"user": updatedUser,
-		},
-	})
+	if errors.Is(err, gobreaker.ErrOpenState) {
+		_ = jobs.EnqueueUpdateUser(
+			hl.q,
+			usecaseInput,
+			asynq.Queue("critical"),
+			asynq.MaxRetry(10),
+			asynq.ProcessIn(usecase.UpdateUserRetryTime),
+		)
+		c.Status(http.StatusAccepted)
+		return
+	}
 }

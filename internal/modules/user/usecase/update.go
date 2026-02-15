@@ -16,7 +16,7 @@ import (
 	"gorm.io/gorm"
 )
 
-const updateUserRetryTime = 30 * time.Second
+const UpdateUserRetryTime = 30 * time.Second
 
 type UpdateUserUsecase interface {
 	Execute(ctx context.Context, input *input.UpdateUserInput) (*entities.User, error)
@@ -33,7 +33,7 @@ func NewUpdateUserUsecase(repo *repositories.Query, hashPassword authUsecase.Has
 		Name:        "update_user_db",
 		MaxRequests: 1,
 		Interval:    0,
-		Timeout:     updateUserRetryTime,
+		Timeout:     UpdateUserRetryTime,
 		ReadyToTrip: func(counts gobreaker.Counts) bool {
 			return counts.ConsecutiveFailures >= 3
 		},

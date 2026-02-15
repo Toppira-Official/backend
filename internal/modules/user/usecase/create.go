@@ -15,7 +15,7 @@ import (
 	"gorm.io/gorm"
 )
 
-const createUserRetryTime = 30 * time.Second
+const CreateUserRetryTime = 30 * time.Second
 
 type CreateUserUsecase interface {
 	Execute(ctx context.Context, input *input.CreateUserInput) (*entities.User, error)
@@ -32,7 +32,7 @@ func NewCreateUserUsecase(repo *repositories.Query, hashPassword authUsecase.Has
 		Name:        "create_user_db",
 		MaxRequests: 1,
 		Interval:    0,
-		Timeout:     createUserRetryTime,
+		Timeout:     CreateUserRetryTime,
 		ReadyToTrip: func(counts gobreaker.Counts) bool {
 			return counts.ConsecutiveFailures >= 3
 		},

@@ -12,15 +12,19 @@ import (
 
 const TypeUpdateUser = "user:update"
 
-type UpdateUserJob struct {
+type UpdateUserJob interface {
+	Process(ctx context.Context, t *asynq.Task) error
+}
+
+type updateUserJob struct {
 	uc usecase.UpdateUserUsecase
 }
 
-func NewUpdateUserJob(uc usecase.UpdateUserUsecase) *UpdateUserJob {
-	return &UpdateUserJob{uc: uc}
+func NewUpdateUserJob(uc usecase.UpdateUserUsecase) UpdateUserJob {
+	return &updateUserJob{uc: uc}
 }
 
-func (j *UpdateUserJob) Process(ctx context.Context, t *asynq.Task) error {
+func (j *updateUserJob) Process(ctx context.Context, t *asynq.Task) error {
 	var p input.UpdateUserInput
 	if err := json.Unmarshal(t.Payload(), &p); err != nil {
 		return asynq.SkipRetry
@@ -34,6 +38,6 @@ func (j *UpdateUserJob) Process(ctx context.Context, t *asynq.Task) error {
 	return err
 }
 
-func Register(mux *asynq.ServeMux, updateUser *UpdateUserJob) {
+func Register(mux *asynq.ServeMux, updateUser UpdateUserJob) {
 	mux.HandleFunc(TypeUpdateUser, updateUser.Process)
 }

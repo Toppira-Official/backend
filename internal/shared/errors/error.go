@@ -19,7 +19,7 @@ func E(code ErrCode, err ...error) *AppError {
 
 func (e *AppError) Error() string {
 	if e.Err != nil {
-		return e.Err.Error()
+		return string(e.Code) + ": " + e.Err.Error()
 	}
 	return string(e.Code)
 }

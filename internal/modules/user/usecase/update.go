@@ -71,6 +71,10 @@ func (uc *updateUserUsecase) Execute(ctx context.Context, input *input.UpdateUse
 		updateData["password"] = hashed
 	}
 
+	if len(updateData) == 0 {
+		return nil, apperrors.E(apperrors.ErrUserInvalidData, nil)
+	}
+
 	res, err := uc.breaker.Execute(func() (gen.ResultInfo, error) {
 		return uc.repo.User.WithContext(ctx).
 			Where(uc.repo.User.BaseID.Eq(input.ID)).

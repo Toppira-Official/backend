@@ -6,6 +6,7 @@ import (
 
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/queues"
 
 	"github.com/hibiken/asynq"
 )
@@ -40,4 +41,16 @@ func (j *updateUserJob) Process(ctx context.Context, t *asynq.Task) error {
 
 func Register(mux *asynq.ServeMux, updateUser UpdateUserJob) {
 	mux.HandleFunc(TypeUpdateUser, updateUser.Process)
+}
+
+func EnqueueUpdateUser(q *queues.Client, in *input.UpdateUserInput, opts ...asynq.Option) error {
+	b, err := json.Marshal(in)
+	if err != nil {
+		return err
+	}
+
+	task := asynq.NewTask(TypeUpdateUser, b)
+
+	_, err = q.Enqueue(task, opts...)
+	return err
 }

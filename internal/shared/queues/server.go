@@ -1,11 +1,14 @@
 package queues
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
+	"time"
 
 	"github.com/Toppira-Official/Reminder_Server/internal/configs"
 	"github.com/hibiken/asynq"
+	"github.com/sony/gobreaker/v2"
 )
 
 func NewAsynqServer(envs configs.Environments) *asynq.Server {
@@ -26,6 +29,12 @@ func NewAsynqServer(envs configs.Environments) *asynq.Server {
 			Queues: map[string]int{
 				"critical": 10,
 				"default":  1,
+			},
+			RetryDelayFunc: func(n int, e error, t *asynq.Task) time.Duration {
+				if errors.Is(e, gobreaker.ErrOpenState) {
+					return configs.RetryDelay
+				}
+				return asynq.DefaultRetryDelayFunc(n, e, t)
 			},
 		},
 	)

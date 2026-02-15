@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 	"strings"
-	"time"
 
+	"github.com/Toppira-Official/Reminder_Server/internal/configs"
 	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
@@ -31,7 +31,7 @@ func NewUpdateUserUsecase(repo *repositories.Query, hashPassword authUsecase.Has
 		Name:        "update_user_db",
 		MaxRequests: 1,
 		Interval:    0,
-		Timeout:     time.Minute * 2,
+		Timeout:     configs.RetryDelay,
 		ReadyToTrip: func(counts gobreaker.Counts) bool {
 			return counts.ConsecutiveFailures >= 3
 		},

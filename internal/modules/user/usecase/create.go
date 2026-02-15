@@ -71,7 +71,7 @@ func (uc *createUserUsecase) Execute(ctx context.Context, input *input.CreateUse
 		Name:           input.Name,
 		ProfilePicture: input.ProfilePicture,
 		Password:       &passwordHash,
-		IsActive:       false,
+		IsActive:       input.IsActive,
 	}
 
 	_, err = uc.breaker.Execute(func() (struct{}, error) {

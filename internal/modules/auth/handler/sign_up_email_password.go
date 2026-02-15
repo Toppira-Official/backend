@@ -56,6 +56,7 @@ func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 	usecaseInput := &userInput.CreateUserInput{
 		Email:    input.Email,
 		Password: &input.Password,
+		IsActive: false,
 	}
 	savedUser, err := hl.createUserUsecase.Execute(ctx, usecaseInput)
 	if err != nil {

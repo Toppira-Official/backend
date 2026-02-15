@@ -8,4 +8,6 @@ type CreateUserInput struct {
 	ProfilePicture *string
 
 	Password *string
+
+	IsActive bool
 }

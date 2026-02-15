@@ -6,6 +6,7 @@ import (
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/middlewares"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/queues"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/utils"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -46,6 +47,7 @@ func main() {
 			auth.Module,
 			middlewares.Module,
 			utils.Module,
+			queues.Module,
 		).
 		Run()
 }

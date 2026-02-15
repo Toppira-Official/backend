@@ -18,6 +18,10 @@ type Environments struct {
 	POSTGRES_HOST        Environment
 	POSTGRES_PORT        Environment
 	POSTGRES_DB          Environment
+	REDIS_HOST           Environment
+	REDIS_PORT           Environment
+	REDIS_PASSWORD       Environment
+	REDIS_DB             Environment
 	JWT_SECRET           Environment
 	JWT_EXPIRES_IN_HOURS Environment
 	FILES_PATH           Environment
@@ -42,6 +46,10 @@ func GetEnvironments() Environments {
 		POSTGRES_HOST:        Environment(os.Getenv("POSTGRES_HOST")).orDefault("localhost"),
 		POSTGRES_PORT:        Environment(os.Getenv("POSTGRES_PORT")).orDefault("5432"),
 		POSTGRES_DB:          Environment(os.Getenv("POSTGRES_DB")).orPanic(),
+		REDIS_HOST:           Environment(os.Getenv("REDIS_HOST")).orDefault("localhost"),
+		REDIS_PORT:           Environment(os.Getenv("REDIS_PORT")).orDefault("6379"),
+		REDIS_PASSWORD:       Environment(os.Getenv("REDIS_PASSWORD")).orPanic(),
+		REDIS_DB:             Environment(os.Getenv("REDIS_DB")).orDefault("0"),
 		JWT_SECRET:           Environment(os.Getenv("JWT_SECRET")).orPanic(),
 		JWT_EXPIRES_IN_HOURS: Environment(os.Getenv("JWT_EXPIRES_IN_HOURS")).orPanic(),
 		FILES_PATH:           Environment(os.Getenv("FILES_PATH")).orDefault("static"),

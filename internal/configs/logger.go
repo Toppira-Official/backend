@@ -5,6 +5,7 @@ import (
 
 	"go.uber.org/fx"
 	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 func NewLogger(lc fx.Lifecycle, envs Environments) *zap.Logger {
@@ -14,7 +15,10 @@ func NewLogger(lc fx.Lifecycle, envs Environments) *zap.Logger {
 	case "production":
 		logger, _ = zap.NewProduction()
 	default:
-		logger, _ = zap.NewDevelopment()
+		config := zap.NewDevelopmentConfig()
+		config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+		config.OutputPaths = []string{"stderr"}
+		logger, _ = config.Build()
 	}
 
 	lc.Append(fx.Hook{

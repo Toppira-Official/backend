@@ -60,13 +60,13 @@ func (uc *createUserUsecase) Execute(ctx context.Context, input *input.CreateUse
 
 	email := strings.ToLower(input.Email)
 
-	passwordHash := *input.Password
+	var passwordHash *string
 	if input.Password != nil {
-		var err error
-		passwordHash, err = uc.hashPassword.Execute(ctx, []byte(passwordHash))
+		hashed, err := uc.hashPassword.Execute(ctx, []byte(*input.Password))
 		if err != nil {
 			return nil, apperrors.E(apperrors.ErrServerInternalError, err)
 		}
+		passwordHash = &hashed
 	}
 
 	user := &entities.User{
@@ -74,7 +74,7 @@ func (uc *createUserUsecase) Execute(ctx context.Context, input *input.CreateUse
 		Phone:          input.Phone,
 		Name:           input.Name,
 		ProfilePicture: input.ProfilePicture,
-		Password:       &passwordHash,
+		Password:       passwordHash,
 		IsActive:       input.IsActive,
 	}
 

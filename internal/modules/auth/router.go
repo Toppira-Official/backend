@@ -18,6 +18,7 @@ func RegisterRoutes(engine *gin.Engine, h AuthHandlers) {
 	group := engine.Group("/auth")
 
 	group.GET("/google-oauth/redirect-url", h.GoogleOauth.GetGoogleOauthRedirectURL)
+	group.GET("/google-oauth/callback", h.GoogleOauth.GoogleOauthCallback)
 	group.POST("/sign-up-with-user-password", h.SignUp.SignUpWithEmailPassword)
 	group.POST("/login-with-user-password", h.Login.LoginWithEmailPassword)
 }

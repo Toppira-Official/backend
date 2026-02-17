@@ -18,23 +18,61 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/auth/google-oauth/redirect-url": {
+        "/auth/google-oauth/callback": {
             "get": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "tags": [
                     "Authentication"
                 ],
-                "summary": "get google oauth redirect url",
+                "summary": "Handle Google OAuth callback",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Code",
+                        "name": "code",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "State",
+                        "name": "state",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/HttpOutput"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/google-oauth/redirect-url": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Redirect to Google OAuth URL",
+                "responses": {
+                    "307": {
+                        "description": "Temporary Redirect",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 }
@@ -289,28 +327,28 @@ const docTemplate = `{
         "ErrCode": {
             "type": "string",
             "enum": [
-                "AUTH_INVALID_TOKEN",
-                "AUTH_EXPIRED_TOKEN",
-                "AUTH_TOKEN_NOT_PROVIDED",
-                "AUTH_INVALID_EMAIL_OR_PASSWORD",
+                "SERVER_INTERNAL_ERROR",
+                "SERVER_NOT_RESPONDING",
+                "SERVICE_TEMPORARILY_UNAVAILABLE",
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
-                "SERVER_INTERNAL_ERROR",
-                "SERVER_NOT_RESPONDING",
-                "SERVICE_TEMPORARILY_UNAVAILABLE"
+                "AUTH_INVALID_TOKEN",
+                "AUTH_EXPIRED_TOKEN",
+                "AUTH_TOKEN_NOT_PROVIDED",
+                "AUTH_INVALID_EMAIL_OR_PASSWORD"
             ],
             "x-enum-varnames": [
-                "ErrAuthInvalidToken",
-                "ErrAuthExpiredToken",
-                "ErrAuthTokenNotProvided",
-                "ErrAuthInvalidEmailOrPassword",
+                "ErrServerInternalError",
+                "ErrServerNotResponding",
+                "ErrServiceTemporarilyUnavailable",
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
-                "ErrServerInternalError",
-                "ErrServerNotResponding",
-                "ErrServiceTemporarilyUnavailable"
+                "ErrAuthInvalidToken",
+                "ErrAuthExpiredToken",
+                "ErrAuthTokenNotProvided",
+                "ErrAuthInvalidEmailOrPassword"
             ]
         },
         "HttpOutput": {

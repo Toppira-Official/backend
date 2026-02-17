@@ -8,28 +8,28 @@ definitions:
     type: object
   ErrCode:
     enum:
+    - SERVER_INTERNAL_ERROR
+    - SERVER_NOT_RESPONDING
+    - SERVICE_TEMPORARILY_UNAVAILABLE
+    - USER_INVALID_DATA
+    - USER_ALREADY_EXISTS
+    - USER_NOT_FOUND
     - AUTH_INVALID_TOKEN
     - AUTH_EXPIRED_TOKEN
     - AUTH_TOKEN_NOT_PROVIDED
     - AUTH_INVALID_EMAIL_OR_PASSWORD
-    - USER_INVALID_DATA
-    - USER_ALREADY_EXISTS
-    - USER_NOT_FOUND
-    - SERVER_INTERNAL_ERROR
-    - SERVER_NOT_RESPONDING
-    - SERVICE_TEMPORARILY_UNAVAILABLE
     type: string
     x-enum-varnames:
+    - ErrServerInternalError
+    - ErrServerNotResponding
+    - ErrServiceTemporarilyUnavailable
+    - ErrUserInvalidData
+    - ErrUserAlreadyExists
+    - ErrUserNotFound
     - ErrAuthInvalidToken
     - ErrAuthExpiredToken
     - ErrAuthTokenNotProvided
     - ErrAuthInvalidEmailOrPassword
-    - ErrUserInvalidData
-    - ErrUserAlreadyExists
-    - ErrUserNotFound
-    - ErrServerInternalError
-    - ErrServerNotResponding
-    - ErrServiceTemporarilyUnavailable
   HttpOutput:
     properties:
       data:
@@ -87,18 +87,43 @@ info:
   title: Toppira APIs
   version: "1.0"
 paths:
-  /auth/google-oauth/redirect-url:
+  /auth/google-oauth/callback:
     get:
-      consumes:
-      - application/json
-      produces:
-      - application/json
+      parameters:
+      - description: Code
+        in: query
+        name: code
+        required: true
+        type: string
+      - description: State
+        in: query
+        name: state
+        required: true
+        type: string
       responses:
         "200":
           description: OK
           schema:
             $ref: '#/definitions/HttpOutput'
-      summary: get google oauth redirect url
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ClientError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ClientError'
+      summary: Handle Google OAuth callback
+      tags:
+      - Authentication
+  /auth/google-oauth/redirect-url:
+    get:
+      responses:
+        "307":
+          description: Temporary Redirect
+          schema:
+            type: string
+      summary: Redirect to Google OAuth URL
       tags:
       - Authentication
   /auth/login-with-user-password:

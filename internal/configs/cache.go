@@ -1,13 +1,15 @@
 package configs
 
 import (
+	"context"
 	"fmt"
 	"strconv"
 
 	"github.com/redis/go-redis/v9"
+	"go.uber.org/fx"
 )
 
-func NewCache(envs Environments) *redis.Client {
+func NewCache(lc fx.Lifecycle, envs Environments) *redis.Client {
 	redisDB, err := strconv.Atoi(envs.REDIS_DB.String())
 	if err != nil {
 		panic(err)
@@ -18,7 +20,12 @@ func NewCache(envs Environments) *redis.Client {
 		Password: envs.REDIS_PASSWORD.String(),
 		DB:       redisDB,
 	})
-	defer redisClient.Close()
+
+	lc.Append(fx.Hook{
+		OnStop: func(ctx context.Context) error {
+			return redisClient.Close()
+		},
+	})
 
 	return redisClient
 }

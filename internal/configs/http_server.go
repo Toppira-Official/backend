@@ -2,6 +2,7 @@ package configs
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"net/http"
 	"time"
@@ -48,7 +49,7 @@ func NewHttpServer(lc fx.Lifecycle, d HttpServerDeps) *gin.Engine {
 		OnStart: func(ctx context.Context) error {
 			go func() {
 				d.Logger.Info("http server started", zap.String("addr", srv.Addr))
-				if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+				if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 					d.Logger.Fatal("http server crashed", zap.Error(err))
 				}
 			}()

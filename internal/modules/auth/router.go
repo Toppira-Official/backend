@@ -6,7 +6,7 @@ import (
 	"go.uber.org/fx"
 )
 
-type AuthHandlers struct {
+type Handler struct {
 	fx.In
 
 	SignUp      *handler.SignUpHandler
@@ -14,7 +14,7 @@ type AuthHandlers struct {
 	GoogleOauth *handler.GoogleOauthHandler
 }
 
-func RegisterRoutes(engine *gin.Engine, h AuthHandlers) {
+func RegisterRoutes(engine *gin.Engine, h Handler) {
 	group := engine.Group("/auth")
 
 	group.GET("/google-oauth/redirect-url", h.GoogleOauth.GetGoogleOauthRedirectURL)

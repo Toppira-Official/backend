@@ -17,6 +17,6 @@ func NewVerifyPasswordUsecase() VerifyPasswordUsecase {
 }
 
 func (uc *verifyPasswordUsecase) Execute(ctx context.Context, password, hash []byte) bool {
-	err := bcrypt.CompareHashAndPassword([]byte(hash), password)
+	err := bcrypt.CompareHashAndPassword(hash, password)
 	return err == nil
 }

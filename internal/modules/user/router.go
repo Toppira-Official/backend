@@ -6,7 +6,7 @@ import (
 	"go.uber.org/fx"
 )
 
-type UserHandlers struct {
+type Handler struct {
 	fx.In
 
 	GetMeHandler    *handler.GetMeHandler
@@ -14,7 +14,7 @@ type UserHandlers struct {
 	GuardLogin      gin.HandlerFunc `name:"guard_login"`
 }
 
-func RegisterRoutes(engine *gin.Engine, h UserHandlers) {
+func RegisterRoutes(engine *gin.Engine, h Handler) {
 	group := engine.Group("/user")
 
 	group.GET("/me", h.GuardLogin, h.GetMeHandler.GetMyInfo)

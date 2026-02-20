@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/Toppira-Official/Reminder_Server/internal/configs"
 	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
@@ -86,7 +87,7 @@ func (h *GoogleOauthHandler) GoogleOauthCallback(c *gin.Context) {
 
 	user, err := h.findUserByEmailUsecase.Execute(ctx, userInfo.Email)
 	if errors.Is(err, gorm.ErrRecordNotFound) {
-		userName := fmt.Sprintf("%s %s", userInfo.Name, userInfo.FamilyName)
+		userName := strings.TrimSpace(fmt.Sprintf("%s %s", userInfo.Name, userInfo.FamilyName))
 		user, err = h.createUserUsecase.Execute(ctx, &input.CreateUserInput{
 			Email:          userInfo.Email,
 			ProfilePicture: &userInfo.Picture,

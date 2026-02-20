@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="refactor: fix qodana warnings">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/modules/auth/handler/google_oauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/modules/auth/handler/google_oauth.go" afterDir="false" />
-    </list>
+    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: complete google callback logic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +55,7 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
+      "postgresql",
       "redis"
     ]
   }
@@ -103,6 +101,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: fix documents" />
     <MESSAGE value="refactor: fix qodana warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: fix qodana warnings" />
+    <MESSAGE value="feat: complete google callback logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: complete google callback logic" />
   </component>
 </project>

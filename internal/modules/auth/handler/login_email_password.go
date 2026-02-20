@@ -31,7 +31,7 @@ func NewLoginHandler(
 	}
 }
 
-// SignUpWithEmailPassword godoc
+// LoginWithEmailPassword godoc
 //
 //	@Summary	login with email and password
 //	@Tags		Authentication

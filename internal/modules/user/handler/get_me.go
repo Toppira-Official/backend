@@ -15,7 +15,7 @@ func NewGetMeHandler() *GetMeHandler {
 	return &GetMeHandler{}
 }
 
-// GetMe godoc
+// GetMyInfo godoc
 //
 //	@Summary	get my(user) data
 //	@Tags		User

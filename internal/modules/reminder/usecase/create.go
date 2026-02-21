@@ -52,6 +52,7 @@ func (uc *createReminderUsecase) Execute(ctx context.Context, input *input.Creat
 		ScheduledAt:   input.ScheduledAt,
 		ReminderTimes: input.ReminderTimes,
 		Status:        constants.Pending,
+		UserID:        input.UserID,
 	}
 
 	_, err := uc.breaker.Execute(func() (struct{}, error) {

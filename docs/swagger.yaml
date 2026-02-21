@@ -8,28 +8,30 @@ definitions:
     type: object
   ErrCode:
     enum:
+    - SERVER_INTERNAL_ERROR
+    - SERVER_NOT_RESPONDING
+    - SERVICE_TEMPORARILY_UNAVAILABLE
+    - Reminder_INVALID_DATA
+    - USER_INVALID_DATA
+    - USER_ALREADY_EXISTS
+    - USER_NOT_FOUND
     - AUTH_INVALID_TOKEN
     - AUTH_EXPIRED_TOKEN
     - AUTH_TOKEN_NOT_PROVIDED
     - AUTH_INVALID_EMAIL_OR_PASSWORD
-    - USER_INVALID_DATA
-    - USER_ALREADY_EXISTS
-    - USER_NOT_FOUND
-    - SERVER_INTERNAL_ERROR
-    - SERVER_NOT_RESPONDING
-    - SERVICE_TEMPORARILY_UNAVAILABLE
     type: string
     x-enum-varnames:
+    - ErrServerInternalError
+    - ErrServerNotResponding
+    - ErrServiceTemporarilyUnavailable
+    - ErrReminderInvalidData
+    - ErrUserInvalidData
+    - ErrUserAlreadyExists
+    - ErrUserNotFound
     - ErrAuthInvalidToken
     - ErrAuthExpiredToken
     - ErrAuthTokenNotProvided
     - ErrAuthInvalidEmailOrPassword
-    - ErrUserInvalidData
-    - ErrUserAlreadyExists
-    - ErrUserNotFound
-    - ErrServerInternalError
-    - ErrServerNotResponding
-    - ErrServiceTemporarilyUnavailable
   HttpOutput:
     properties:
       data:
@@ -78,6 +80,35 @@ definitions:
         example: "09123456789"
         type: string
     type: object
+  github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput:
+    properties:
+      description:
+        type: string
+      priority:
+        $ref: '#/definitions/github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority'
+      reminderTimes:
+        items:
+          type: string
+        type: array
+      scheduledAt:
+        type: string
+      title:
+        type: string
+      userID:
+        type: integer
+    type: object
+  github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority:
+    enum:
+    - low
+    - medium
+    - high
+    - critical
+    type: string
+    x-enum-varnames:
+    - Low
+    - Medium
+    - High
+    - Critical
 host: localhost:3000
 info:
   contact:
@@ -204,6 +235,39 @@ paths:
       summary: sign up with email and password
       tags:
       - Authentication
+  /reminder:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: New Reminder Input
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/HttpOutput'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ClientError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ClientError'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ClientError'
+      summary: creates new reminder
+      tags:
+      - Reminder
   /user/me:
     get:
       consumes:

@@ -11,5 +11,6 @@ type CreateReminderInput struct {
 	Description   *string
 	ReminderTimes []time.Time
 	ScheduledAt   time.Time
+	UserID        uint
 	Priority      *constants.ReminderPriority
 }

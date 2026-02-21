@@ -49,6 +49,13 @@ func (uc *listRemindersUsecase) Execute(ctx context.Context, userID uint, page, 
 			WithContext(ctx).Reminder.
 			Where(uc.repo.Reminder.UserID.Eq(userID)).
 			Order(uc.repo.Reminder.ScheduledAt.Desc()).
+			Select(
+				uc.repo.Reminder.BaseID,
+				uc.repo.Reminder.Title,
+				uc.repo.Reminder.ScheduledAt,
+				uc.repo.Reminder.Status,
+				uc.repo.Reminder.Priority,
+			).
 			Limit(limit).
 			Offset(offset).
 			Find()

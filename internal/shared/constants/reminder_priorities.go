@@ -1,6 +1,6 @@
 package constants
 
-type ReminderPriority string
+type ReminderPriority string //	@name	ReminderPriority
 
 const (
 	Low      ReminderPriority = "low"

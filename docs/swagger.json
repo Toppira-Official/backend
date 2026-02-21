@@ -193,6 +193,11 @@
         },
         "/reminder": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "consumes": [
                     "application/json"
                 ],
@@ -210,7 +215,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput"
+                            "$ref": "#/definitions/NewReminderInput"
                         }
                     }
                 ],
@@ -380,27 +385,27 @@
                 "SERVER_INTERNAL_ERROR",
                 "SERVER_NOT_RESPONDING",
                 "SERVICE_TEMPORARILY_UNAVAILABLE",
-                "Reminder_INVALID_DATA",
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
                 "AUTH_INVALID_TOKEN",
                 "AUTH_EXPIRED_TOKEN",
                 "AUTH_TOKEN_NOT_PROVIDED",
-                "AUTH_INVALID_EMAIL_OR_PASSWORD"
+                "AUTH_INVALID_EMAIL_OR_PASSWORD",
+                "Reminder_INVALID_DATA"
             ],
             "x-enum-varnames": [
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
                 "ErrServiceTemporarilyUnavailable",
-                "ErrReminderInvalidData",
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
                 "ErrAuthInvalidToken",
                 "ErrAuthExpiredToken",
                 "ErrAuthTokenNotProvided",
-                "ErrAuthInvalidEmailOrPassword"
+                "ErrAuthInvalidEmailOrPassword",
+                "ErrReminderInvalidData"
             ]
         },
         "HttpOutput": {
@@ -430,6 +435,50 @@
                     "example": "StrongPassword1234"
                 }
             }
+        },
+        "NewReminderInput": {
+            "type": "object",
+            "required": [
+                "scheduled_at",
+                "title"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "priority": {
+                    "$ref": "#/definitions/ReminderPriority"
+                },
+                "reminder_times": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "scheduled_at": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "minLength": 3
+                }
+            }
+        },
+        "ReminderPriority": {
+            "type": "string",
+            "enum": [
+                "low",
+                "medium",
+                "high",
+                "critical"
+            ],
+            "x-enum-varnames": [
+                "Low",
+                "Medium",
+                "High",
+                "Critical"
+            ]
         },
         "SignUpWithEmailPasswordInput": {
             "type": "object",
@@ -468,47 +517,6 @@
                     "example": "09123456789"
                 }
             }
-        },
-        "github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "priority": {
-                    "$ref": "#/definitions/github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority"
-                },
-                "reminderTimes": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "scheduledAt": {
-                    "type": "string"
-                },
-                "title": {
-                    "type": "string"
-                },
-                "userID": {
-                    "type": "integer"
-                }
-            }
-        },
-        "github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority": {
-            "type": "string",
-            "enum": [
-                "low",
-                "medium",
-                "high",
-                "critical"
-            ],
-            "x-enum-varnames": [
-                "Low",
-                "Medium",
-                "High",
-                "Critical"
-            ]
         }
     },
     "securityDefinitions": {

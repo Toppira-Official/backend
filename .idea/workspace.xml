@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="chore: init reminder module">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/modules/reminder/module.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/modules/reminder/module.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/modules/reminder/usecase/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/modules/reminder/usecase/create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/modules/reminder/usecase/input/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/modules/reminder/usecase/input/create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/shared/errors/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/shared/errors/http.go" afterDir="false" />
+    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: implement new reminder handler">
+      <change afterPath="$PROJECT_DIR$/internal/modules/reminder/handler/dto/new_reminder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/modules/reminder/handler/new_reminder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/modules/reminder/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/shared/errors/reminder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +110,7 @@
     <MESSAGE value="feat: add reminder priority" />
     <MESSAGE value="feat: implement create reminder usecase" />
     <MESSAGE value="chore: init reminder module" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: init reminder module" />
+    <MESSAGE value="feat: implement new reminder handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement new reminder handler" />
   </component>
 </project>

@@ -11,7 +11,6 @@ definitions:
     - SERVER_INTERNAL_ERROR
     - SERVER_NOT_RESPONDING
     - SERVICE_TEMPORARILY_UNAVAILABLE
-    - Reminder_INVALID_DATA
     - USER_INVALID_DATA
     - USER_ALREADY_EXISTS
     - USER_NOT_FOUND
@@ -19,12 +18,12 @@ definitions:
     - AUTH_EXPIRED_TOKEN
     - AUTH_TOKEN_NOT_PROVIDED
     - AUTH_INVALID_EMAIL_OR_PASSWORD
+    - Reminder_INVALID_DATA
     type: string
     x-enum-varnames:
     - ErrServerInternalError
     - ErrServerNotResponding
     - ErrServiceTemporarilyUnavailable
-    - ErrReminderInvalidData
     - ErrUserInvalidData
     - ErrUserAlreadyExists
     - ErrUserNotFound
@@ -32,6 +31,7 @@ definitions:
     - ErrAuthExpiredToken
     - ErrAuthTokenNotProvided
     - ErrAuthInvalidEmailOrPassword
+    - ErrReminderInvalidData
   HttpOutput:
     properties:
       data:
@@ -52,6 +52,38 @@ definitions:
     - email
     - password
     type: object
+  NewReminderInput:
+    properties:
+      description:
+        type: string
+      priority:
+        $ref: '#/definitions/ReminderPriority'
+      reminder_times:
+        items:
+          type: string
+        type: array
+      scheduled_at:
+        type: string
+      title:
+        maxLength: 200
+        minLength: 3
+        type: string
+    required:
+    - scheduled_at
+    - title
+    type: object
+  ReminderPriority:
+    enum:
+    - low
+    - medium
+    - high
+    - critical
+    type: string
+    x-enum-varnames:
+    - Low
+    - Medium
+    - High
+    - Critical
   SignUpWithEmailPasswordInput:
     properties:
       email:
@@ -80,35 +112,6 @@ definitions:
         example: "09123456789"
         type: string
     type: object
-  github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput:
-    properties:
-      description:
-        type: string
-      priority:
-        $ref: '#/definitions/github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority'
-      reminderTimes:
-        items:
-          type: string
-        type: array
-      scheduledAt:
-        type: string
-      title:
-        type: string
-      userID:
-        type: integer
-    type: object
-  github_com_Toppira-Official_Reminder_Server_internal_shared_constants.ReminderPriority:
-    enum:
-    - low
-    - medium
-    - high
-    - critical
-    type: string
-    x-enum-varnames:
-    - Low
-    - Medium
-    - High
-    - Critical
 host: localhost:3000
 info:
   contact:
@@ -245,7 +248,7 @@ paths:
         name: body
         required: true
         schema:
-          $ref: '#/definitions/github_com_Toppira-Official_Reminder_Server_internal_modules_reminder_usecase_input.CreateReminderInput'
+          $ref: '#/definitions/NewReminderInput'
       produces:
       - application/json
       responses:
@@ -265,6 +268,8 @@ paths:
           description: Service Unavailable
           schema:
             $ref: '#/definitions/ClientError'
+      security:
+      - BearerAuth: []
       summary: creates new reminder
       tags:
       - Reminder

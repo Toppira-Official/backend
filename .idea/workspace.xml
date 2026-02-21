@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: add reminder priority">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/shared/entities/reminder.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/shared/entities/reminder.go" afterDir="false" />
+    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: implement create reminder usecase">
+      <change beforePath="$PROJECT_DIR$/cmd/http/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/http/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +102,7 @@
     <MESSAGE value="feat: complete google callback logic" />
     <MESSAGE value="chore: trim user name" />
     <MESSAGE value="feat: add reminder priority" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add reminder priority" />
+    <MESSAGE value="feat: implement create reminder usecase" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement create reminder usecase" />
   </component>
 </project>

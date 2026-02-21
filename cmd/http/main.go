@@ -4,6 +4,7 @@ import (
 	_ "github.com/Toppira-Official/Reminder_Server/docs"
 	"github.com/Toppira-Official/Reminder_Server/internal/configs"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/reminder"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/middlewares"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/queues"
@@ -44,6 +45,7 @@ func main() {
 			}),
 			configs.Module,
 			user.Module,
+			reminder.Module,
 			auth.Module,
 			middlewares.Module,
 			utils.Module,

@@ -72,9 +72,9 @@ func (hl *NewReminderHandler) NewReminder(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, output.HttpOutput{
-		Data: map[string]any{
-			"reminder": newReminder,
+	c.JSON(http.StatusCreated, output.HttpOutput[dto.NewReminderOutput]{
+		Data: dto.NewReminderOutput{
+			Reminder: newReminder,
 		},
 	})
 }

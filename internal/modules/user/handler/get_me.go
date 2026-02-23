@@ -3,6 +3,7 @@ package handler
 import (
 	"net/http"
 
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/handler/dto"
 	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
@@ -41,9 +42,9 @@ func (hl *GetMeHandler) GetMyInfo(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"user": user,
+	c.JSON(http.StatusOK, output.HttpOutput[dto.GetMeOutput]{
+		Data: dto.GetMeOutput{
+			User: output.ToUserOutput(user),
 		},
 	})
 }

@@ -3,8 +3,8 @@ package handler
 import (
 	"net/http"
 
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/reminder/handler/dto"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/reminder/usecase"
-	"github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
 	output "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
 	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
@@ -33,7 +33,7 @@ func NewMyRemindersHandler(listRemindersUsecase usecase.ListRemindersUsecase) *M
 //	@Security	BearerAuth
 //	@Router		/reminder [get]
 func (hl *MyRemindersHandler) MyReminders(c *gin.Context) {
-	var q dto.PaginationInput
+	var q output.PaginationInput
 	if err := c.ShouldBindQuery(&q); err != nil {
 		c.Error(apperrors.E(apperrors.ErrReminderInvalidData))
 		return
@@ -66,9 +66,9 @@ func (hl *MyRemindersHandler) MyReminders(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"reminders": reminders,
+	c.JSON(http.StatusOK, output.HttpOutput[dto.MyRemindersOutput]{
+		Data: dto.MyRemindersOutput{
+			Reminders: reminders,
 		},
 	})
 }

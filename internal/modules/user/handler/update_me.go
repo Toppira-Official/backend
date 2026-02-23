@@ -77,9 +77,9 @@ func (hl *UpdateMeHandler) UpdateMyInfo(c *gin.Context) {
 	updatedUser, err := hl.updateUserUsecase.Execute(ctx, usecaseInput)
 	if err == nil {
 		updatedUser.Password = nil
-		c.JSON(http.StatusOK, output.HttpOutput{
-			Data: map[string]any{
-				"user": updatedUser,
+		c.JSON(http.StatusOK, output.HttpOutput[dto.UpdateMeOutput]{
+			Data: dto.UpdateMeOutput{
+				User: output.ToUserOutput(updatedUser),
 			},
 		})
 
@@ -98,8 +98,10 @@ func (hl *UpdateMeHandler) UpdateMyInfo(c *gin.Context) {
 			c.Error(apperrors.E(apperrors.ErrServiceTemporarilyUnavailable, enqErr))
 			return
 		}
-		c.JSON(http.StatusAccepted, output.HttpOutput{
-			Data: nil,
+		c.JSON(http.StatusAccepted, output.HttpOutput[dto.UpdateMeAcceptedOutput]{
+			Data: dto.UpdateMeAcceptedOutput{
+				Message: "Update queued for processing",
+			},
 		})
 		return
 	}

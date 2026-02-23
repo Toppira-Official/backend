@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/Toppira-Official/Reminder_Server/internal/configs"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
 	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
 	userUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
@@ -106,10 +107,10 @@ func (h *GoogleOauthHandler) GoogleOauthCallback(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"user":         userInfo,
-			"access_token": accessToken,
+	c.JSON(http.StatusOK, output.HttpOutput[dto.GoogleOAuthOutput]{
+		Data: dto.GoogleOAuthOutput{
+			User:        userInfo,
+			AccessToken: accessToken,
 		},
 	})
 }

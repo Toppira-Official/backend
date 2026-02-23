@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	input "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
 	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
 	userUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 
@@ -37,7 +37,7 @@ func NewLoginHandler(
 //	@Tags		Authentication
 //	@Accept		json
 //	@Produce	json
-//	@Param		body	body		input.LoginWithEmailPasswordInput	true	"Login Input"
+//	@Param		body	body		dto.LoginWithEmailPasswordInput	true	"Login Input"
 //	@Success	200		{object}	output.HttpOutput
 //	@Failure	400		{object}	apperrors.ClientError
 //	@Failure	404		{object}	apperrors.ClientError
@@ -47,7 +47,7 @@ func NewLoginHandler(
 func (hl *LoginHandler) LoginWithEmailPassword(c *gin.Context) {
 	ctx := c.Request.Context()
 
-	var input input.LoginWithEmailPasswordInput
+	var input dto.LoginWithEmailPasswordInput
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.Error(apperrors.E(apperrors.ErrUserInvalidData, err))
 		return
@@ -72,10 +72,10 @@ func (hl *LoginHandler) LoginWithEmailPassword(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"user":         user,
-			"access_token": accessToken,
-		}},
-	)
+	c.JSON(http.StatusOK, output.HttpOutput[dto.AuthOutput]{
+		Data: dto.AuthOutput{
+			User:        output.ToUserOutput(user),
+			AccessToken: accessToken,
+		},
+	})
 }

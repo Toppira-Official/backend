@@ -56,9 +56,9 @@ func (hl *DeleteRemindersHandler) DeleteReminder(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, output.HttpOutput{
-		Data: map[string]any{
-			"id": q.ID,
+	c.JSON(http.StatusOK, output.HttpOutput[dto.DeleteReminderOutput]{
+		Data: dto.DeleteReminderOutput{
+			ID: q.ID,
 		},
 	})
 }

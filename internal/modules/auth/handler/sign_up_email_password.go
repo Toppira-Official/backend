@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
+	authDto "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/handler/dto"
 	authUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/auth/usecase"
 	userUsecase "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase"
 	userInput "github.com/Toppira-Official/Reminder_Server/internal/modules/user/usecase/input"
@@ -47,7 +47,7 @@ func NewSignUpHandler(
 func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 	ctx := c.Request.Context()
 
-	var input dto.SignUpWithEmailPasswordInput
+	var input authDto.SignUpWithEmailPasswordInput
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.Error(apperrors.E(apperrors.ErrUserInvalidData, err))
 		return
@@ -73,10 +73,10 @@ func (hl *SignUpHandler) SignUpWithEmailPassword(c *gin.Context) {
 
 	savedUser.Password = nil
 
-	c.JSON(http.StatusCreated, output.HttpOutput{
-		Data: map[string]any{
-			"user":         savedUser,
-			"access_token": accessToken,
-		}},
-	)
+	c.JSON(http.StatusCreated, output.HttpOutput[authDto.AuthOutput]{
+		Data: authDto.AuthOutput{
+			User:        output.ToUserOutput(savedUser),
+			AccessToken: accessToken,
+		},
+	})
 }

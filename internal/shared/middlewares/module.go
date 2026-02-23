@@ -13,5 +13,9 @@ var Module = fx.Module(
 			GuardLogin,
 			fx.ResultTags(`name:"guard_login"`),
 		),
+		fx.Annotate(
+			TokenBucket,
+			fx.ResultTags(`name:"token_bucket"`),
+		),
 	),
 )

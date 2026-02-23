@@ -21,6 +21,7 @@ type HttpServerDeps struct {
 	fx.In
 
 	ErrorHandler gin.HandlerFunc `name:"error_handler"`
+	TokenBucket  gin.HandlerFunc `name:"token_bucket"`
 	Envs         Environments
 	Logger       *zap.Logger
 }
@@ -39,7 +40,7 @@ func NewHttpServer(lc fx.Lifecycle, d HttpServerDeps) *gin.Engine {
 	engine.Use(ginzap.Ginzap(d.Logger, time.RFC3339, true))
 	engine.Use(ginzap.RecoveryWithZap(d.Logger, true))
 	engine.Use(d.ErrorHandler)
-
+	engine.Use(d.TokenBucket)
 	srv := &http.Server{
 		Addr:    httpServerPortNumber(d.Envs.PORT.String()),
 		Handler: engine,

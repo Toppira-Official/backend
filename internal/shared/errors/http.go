@@ -7,6 +7,7 @@ var httpStatusByCode = map[ErrCode]int{
 	ErrServerInternalError:           http.StatusInternalServerError,
 	ErrServerNotResponding:           http.StatusServiceUnavailable,
 	ErrServiceTemporarilyUnavailable: http.StatusServiceUnavailable,
+	ErrTooManyRequests:               http.StatusTooManyRequests,
 
 	// User Errors
 	ErrUserInvalidData:   http.StatusBadRequest,

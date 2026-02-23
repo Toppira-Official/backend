@@ -27,10 +27,11 @@ definitions:
     - USER_INVALID_DATA
     - USER_ALREADY_EXISTS
     - USER_NOT_FOUND
+    - Reminder_INVALID_DATA
     - SERVER_INTERNAL_ERROR
     - SERVER_NOT_RESPONDING
+    - TOO_MANY_REQUESTS
     - SERVICE_TEMPORARILY_UNAVAILABLE
-    - Reminder_INVALID_DATA
     type: string
     x-enum-varnames:
     - ErrAuthInvalidToken
@@ -40,10 +41,11 @@ definitions:
     - ErrUserInvalidData
     - ErrUserAlreadyExists
     - ErrUserNotFound
+    - ErrReminderInvalidData
     - ErrServerInternalError
     - ErrServerNotResponding
+    - ErrTooManyRequests
     - ErrServiceTemporarilyUnavailable
-    - ErrReminderInvalidData
   GetMeOutput:
     properties:
       user:

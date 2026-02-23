@@ -516,10 +516,11 @@ const docTemplate = `{
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
+                "Reminder_INVALID_DATA",
                 "SERVER_INTERNAL_ERROR",
                 "SERVER_NOT_RESPONDING",
-                "SERVICE_TEMPORARILY_UNAVAILABLE",
-                "Reminder_INVALID_DATA"
+                "TOO_MANY_REQUESTS",
+                "SERVICE_TEMPORARILY_UNAVAILABLE"
             ],
             "x-enum-varnames": [
                 "ErrAuthInvalidToken",
@@ -529,10 +530,11 @@ const docTemplate = `{
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
+                "ErrReminderInvalidData",
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
-                "ErrServiceTemporarilyUnavailable",
-                "ErrReminderInvalidData"
+                "ErrTooManyRequests",
+                "ErrServiceTemporarilyUnavailable"
             ]
         },
         "GetMeOutput": {

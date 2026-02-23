@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: implement delete reminder functionality with user validation">
-      <change beforePath="$PROJECT_DIR$/internal/shared/dto/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/shared/dto/http.go" afterDir="false" />
-    </list>
+    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: update HttpOutput type to use generics and modify cache configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +101,8 @@
     <MESSAGE value="chore: update dependencies and modify project configuration" />
     <MESSAGE value="feat: implement delete reminder use case" />
     <MESSAGE value="feat: implement delete reminder functionality with user validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement delete reminder functionality with user validation" />
+    <MESSAGE value="feat: update HttpOutput type to use generics and modify cache configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update HttpOutput type to use generics and modify cache configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

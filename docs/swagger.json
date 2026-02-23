@@ -506,28 +506,28 @@
                 "AUTH_EXPIRED_TOKEN",
                 "AUTH_TOKEN_NOT_PROVIDED",
                 "AUTH_INVALID_EMAIL_OR_PASSWORD",
-                "USER_INVALID_DATA",
-                "USER_ALREADY_EXISTS",
-                "USER_NOT_FOUND",
-                "Reminder_INVALID_DATA",
                 "SERVER_INTERNAL_ERROR",
                 "SERVER_NOT_RESPONDING",
                 "TOO_MANY_REQUESTS",
-                "SERVICE_TEMPORARILY_UNAVAILABLE"
+                "SERVICE_TEMPORARILY_UNAVAILABLE",
+                "Reminder_INVALID_DATA",
+                "USER_INVALID_DATA",
+                "USER_ALREADY_EXISTS",
+                "USER_NOT_FOUND"
             ],
             "x-enum-varnames": [
                 "ErrAuthInvalidToken",
                 "ErrAuthExpiredToken",
                 "ErrAuthTokenNotProvided",
                 "ErrAuthInvalidEmailOrPassword",
-                "ErrUserInvalidData",
-                "ErrUserAlreadyExists",
-                "ErrUserNotFound",
-                "ErrReminderInvalidData",
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
                 "ErrTooManyRequests",
-                "ErrServiceTemporarilyUnavailable"
+                "ErrServiceTemporarilyUnavailable",
+                "ErrReminderInvalidData",
+                "ErrUserInvalidData",
+                "ErrUserAlreadyExists",
+                "ErrUserNotFound"
             ]
         },
         "GetMeOutput": {

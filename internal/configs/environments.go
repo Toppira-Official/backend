@@ -24,6 +24,8 @@ type Environments struct {
 	REDIS_DB             Environment
 	JWT_SECRET           Environment
 	JWT_EXPIRES_IN_HOURS Environment
+	RATE_LIMIT_QPS       Environment
+	RATE_LIMIT_BURST     Environment
 	FILES_PATH           Environment
 	LOG_FILE             Environment
 	GOOGLE_CLIENT_ID     Environment
@@ -53,6 +55,8 @@ func GetEnvironments() Environments {
 		REDIS_DB:             Environment(os.Getenv("REDIS_DB")).orDefault("0"),
 		JWT_SECRET:           Environment(os.Getenv("JWT_SECRET")).orPanic(),
 		JWT_EXPIRES_IN_HOURS: Environment(os.Getenv("JWT_EXPIRES_IN_HOURS")).orPanic(),
+		RATE_LIMIT_QPS:       Environment(os.Getenv("RATE_LIMIT_QPS")).orPanic(),
+		RATE_LIMIT_BURST:     Environment(os.Getenv("RATE_LIMIT_BURST")).orPanic(),
 		FILES_PATH:           Environment(os.Getenv("FILES_PATH")).orDefault("static"),
 		LOG_FILE:             Environment(os.Getenv("LOG_FILE")).orDefault("logs/app.log"),
 		GOOGLE_CLIENT_ID:     Environment(os.Getenv("GOOGLE_CLIENT_ID")).orPanic(),

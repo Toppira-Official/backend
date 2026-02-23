@@ -1,11 +1,19 @@
 package configs
 
 import (
-	"time"
+	"strconv"
 
 	"golang.org/x/time/rate"
 )
 
 func NewRateLimiter(envs Environments) *rate.Limiter {
-	return rate.NewLimiter(rate.Every(5*time.Second), 10)
+	qps, err := strconv.Atoi(envs.RATE_LIMIT_QPS.String())
+	if err != nil {
+		panic(err)
+	}
+	burst, err := strconv.Atoi(envs.RATE_LIMIT_BURST.String())
+	if err != nil {
+		panic(err)
+	}
+	return rate.NewLimiter(rate.Limit(qps), burst)
 }

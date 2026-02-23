@@ -24,10 +24,39 @@
             </set>
           </value>
         </entry>
+        <entry key="CreateUserInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/input/create.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Environments">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/configs/environments.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="FileSaver">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/utils/save_file.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMeHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/handler/get_me.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Handler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/router.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/user/router.go" />
             </set>
           </value>
         </entry>
@@ -42,6 +71,27 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/configs/http_server.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HttpServerDeps">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/configs/http_server.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/login_email_password.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginWithEmailPasswordInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/login_email_password.go" />
             </set>
           </value>
         </entry>
@@ -69,14 +119,35 @@
         <entry key="SignUpHandler">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_email_password.go" />
             </set>
           </value>
         </entry>
         <entry key="SignUpWithEmailPasswordInput">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_dto.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/sign_up_email_password.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateMeHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/handler/update_me.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateMeInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/handler/dto/update_me.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateUserInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/input/update.go" />
             </set>
           </value>
         </entry>
@@ -90,21 +161,35 @@
         <entry key="createUserUsecase">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/create_user_usecase.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/create.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="findUserByEmailUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/find_by_email.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="findUserByIDUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/find_by_id.go" />
             </set>
           </value>
         </entry>
         <entry key="generateJwtUsecase">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/generate_jwt.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/jwt_generate.go" />
             </set>
           </value>
         </entry>
         <entry key="hashPasswordUsecase">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/hash_password.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/password._hash.go" />
             </set>
           </value>
         </entry>
@@ -143,6 +228,13 @@
             </set>
           </value>
         </entry>
+        <entry key="updateUserUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/update.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="user">
           <value>
             <set>
@@ -174,14 +266,14 @@
         <entry key="verifyJwtUsecase">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_jwt.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/jwt_verify.go" />
             </set>
           </value>
         </entry>
         <entry key="verifyPasswordUsecase">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_password.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/password_verify.go" />
             </set>
           </value>
         </entry>
@@ -192,35 +284,35 @@
         <entry key="file://$PROJECT_DIR$/cmd/gen/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558848" />
+              <option name="lastModified" value="1771618502311" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/cmd/http/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558848" />
+              <option name="lastModified" value="1771618502311" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/docs/docs.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558848" />
+              <option name="lastModified" value="1771618502312" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/configs/db.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/configs/environments.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
               <option name="schema">
                 <list>
                   <option value="Environments" />
@@ -232,10 +324,11 @@
         <entry key="file://$PROJECT_DIR$/internal/configs/http_server.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
               <option name="schema">
                 <list>
                   <option value="HttpServer" />
+                  <option value="HttpServerDeps" />
                 </list>
               </option>
             </ScannedPath>
@@ -244,47 +337,47 @@
         <entry key="file://$PROJECT_DIR$/internal/configs/logger.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/migrations.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/configs/module.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/configs/query.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558849" />
+              <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/router.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/login_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1770753730215" />
               <option name="schema">
                 <list>
-                  <option value="SignUpHandler" />
+                  <option value="LoginWithEmailPasswordInput" />
                 </list>
               </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_dto.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/sign_up_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1770753730215" />
               <option name="schema">
                 <list>
                   <option value="SignUpWithEmailPasswordInput" />
@@ -293,17 +386,53 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/module.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/login_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="LoginHandler" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/generate_jwt.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="SignUpHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/router.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="Handler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/jwt_generate.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
               <option name="schema">
                 <list>
                   <option value="generateJwtUsecase" />
@@ -312,22 +441,10 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/hash_password.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/jwt_verify.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
-              <option name="schema">
-                <list>
-                  <option value="hashPasswordUsecase" />
-                </list>
-              </option>
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_jwt.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1771618502314" />
               <option name="schema">
                 <list>
                   <option value="verifyJwtUsecase" />
@@ -336,10 +453,22 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/verify_password.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/password._hash.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="hashPasswordUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/password_verify.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
               <option name="schema">
                 <list>
                   <option value="verifyPasswordUsecase" />
@@ -348,17 +477,65 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/user/module.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/dto/update_me.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558850" />
+              <option name="lastModified" value="1770753730216" />
+              <option name="schema">
+                <list>
+                  <option value="UpdateMeInput" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/create_user_usecase.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/get_me.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558851" />
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="GetMeHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/update_me.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="UpdateMeHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502315" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/router.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="Handler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/create.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502315" />
               <option name="schema">
                 <list>
                   <option value="createUserUsecase" />
@@ -367,17 +544,63 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/scripts/load_migrations.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/find_by_email.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558851" />
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="findUserByEmailUsecase" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/scripts/module.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/find_by_id.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558851" />
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="findUserByIDUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/input/create.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502316" />
+              <option name="schema">
+                <list>
+                  <option value="CreateUserInput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/input/update.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770753730217" />
+              <option name="schema">
+                <list>
+                  <option value="UpdateUserInput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/usecase/update.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502316" />
+              <option name="schema">
+                <list>
+                  <option value="updateUserUsecase" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -391,7 +614,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/dto/http.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558851" />
+              <option name="lastModified" value="1771618502316" />
               <option name="schema">
                 <list>
                   <option value="HttpOutput" />
@@ -415,7 +638,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/entities/reminder.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558851" />
+              <option name="lastModified" value="1771618502316" />
               <option name="schema">
                 <list>
                   <option value="Reminder" />
@@ -427,7 +650,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/entities/user.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1770753730217" />
               <option name="schema">
                 <list>
                   <option value="User" />
@@ -439,14 +662,14 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/auth.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1770753730217" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/error.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1771618502316" />
               <option name="schema">
                 <list>
                   <option value="ClientError" />
@@ -459,14 +682,14 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/http.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1771618502316" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/shared.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1771618502316" />
             </ScannedPath>
           </value>
         </entry>
@@ -480,7 +703,21 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/middlewares/error_handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1771618502316" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/middlewares/guard_login.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/middlewares/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770753730218" />
             </ScannedPath>
           </value>
         </entry>
@@ -501,7 +738,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558853" />
+              <option name="lastModified" value="1771618502317" />
               <option name="schema">
                 <list>
                   <option value="reminder" />
@@ -516,13 +753,32 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558853" />
+              <option name="lastModified" value="1771618502317" />
               <option name="schema">
                 <list>
                   <option value="user" />
                   <option value="userHasManyReminders" />
                   <option value="userHasManyRemindersTx" />
                   <option value="userDo" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/utils/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1770753730218" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/utils/save_file.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
+              <option name="schema">
+                <list>
+                  <option value="FileSaver" />
                 </list>
               </option>
             </ScannedPath>
@@ -535,12 +791,21 @@
         <entry key="app_error" value="AppError" />
         <entry key="base" value="Base" />
         <entry key="client_error" value="ClientError" />
+        <entry key="create_user_input" value="CreateUserInput" />
         <entry key="create_user_usecase" value="createUserUsecase" />
         <entry key="environments" value="Environments" />
+        <entry key="file_saver" value="FileSaver" />
+        <entry key="find_user_by_email_usecase" value="findUserByEmailUsecase" />
+        <entry key="find_user_by_id_usecase" value="findUserByIDUsecase" />
         <entry key="generate_jwt_usecase" value="generateJwtUsecase" />
+        <entry key="get_me_handler" value="GetMeHandler" />
+        <entry key="handler" value="Handler" />
         <entry key="hash_password_usecase" value="hashPasswordUsecase" />
         <entry key="http_output" value="HttpOutput" />
         <entry key="http_server" value="HttpServer" />
+        <entry key="http_server_deps" value="HttpServerDeps" />
+        <entry key="login_handler" value="LoginHandler" />
+        <entry key="login_with_email_password_input" value="LoginWithEmailPasswordInput" />
         <entry key="query" value="Query" />
         <entry key="query_ctx" value="queryCtx" />
         <entry key="query_tx" value="QueryTx" />
@@ -550,6 +815,10 @@
         <entry key="reminder_do" value="reminderDo" />
         <entry key="sign_up_handler" value="SignUpHandler" />
         <entry key="sign_up_with_email_password_input" value="SignUpWithEmailPasswordInput" />
+        <entry key="update_me_handler" value="UpdateMeHandler" />
+        <entry key="update_me_input" value="UpdateMeInput" />
+        <entry key="update_user_input" value="UpdateUserInput" />
+        <entry key="update_user_usecase" value="updateUserUsecase" />
         <entry key="user" value="user" />
         <entry key="user_do" value="userDo" />
         <entry key="user_has_many_reminders" value="userHasManyReminders" />
@@ -558,6 +827,6 @@
         <entry key="verify_password_usecase" value="verifyPasswordUsecase" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1770753641855" />
+    <option name="lastTimeChecked" value="1771869236716" />
   </component>
 </project>

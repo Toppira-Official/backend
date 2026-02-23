@@ -3,17 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.54">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G</Grants>
-      <IntrospectionStateNumber>773</IntrospectionStateNumber>
-      <ServerVersion>17.8</ServerVersion>
-      <StartupTime>1771602561</StartupTime>
+      <IntrospectionStateNumber>760</IntrospectionStateNumber>
+      <ServerVersion>17.7</ServerVersion>
+      <StartupTime>1771871398</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -810,7 +802,7 @@ false posixrules
 13280||10|C|G
 13280||-9223372036854775808|U|G
 13280||10|U|G</Grants>
-      <IntrospectionStateNumber>773</IntrospectionStateNumber>
+      <IntrospectionStateNumber>760</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>user</OwnerName>
     </database>
@@ -4238,44 +4230,44 @@ false posixrules
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <LastIntrospectionL1Xid>773</LastIntrospectionL1Xid>
-      <LastIntrospectionL2Xid>773</LastIntrospectionL2Xid>
-      <LastIntrospectionL3Xid>773</LastIntrospectionL3Xid>
+      <LastIntrospectionL1Xid>760</LastIntrospectionL1Xid>
+      <LastIntrospectionL2Xid>760</LastIntrospectionL2Xid>
+      <LastIntrospectionL3Xid>760</LastIntrospectionL3Xid>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2026-02-20.16:37:24</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2026-02-23.18:37:10</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="266" parent="265" name="Reminders_id_seq">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16400</ObjectId>
+      <ObjectId>16396</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>user</OwnerName>
     </sequence>
     <sequence id="267" parent="265" name="Users_id_seq">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16389</ObjectId>
+      <ObjectId>16385</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <OwnerName>user</OwnerName>
     </sequence>
     <table id="268" parent="265" name="Reminders">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16401</ObjectId>
-      <StateNumber>754</StateNumber>
+      <ObjectId>16397</ObjectId>
+      <StateNumber>743</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
     <table id="269" parent="265" name="Users">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16390</ObjectId>
-      <StateNumber>751</StateNumber>
+      <ObjectId>16386</ObjectId>
+      <StateNumber>740</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
@@ -4283,169 +4275,169 @@ false posixrules
       <DefaultExpression>nextval(&apos;&quot;Reminders_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>16400</SequenceId>
+      <SequenceId>16396</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="271" parent="268" name="created_at">
       <Position>2</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
     <column id="272" parent="268" name="updated_at">
       <Position>3</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
     <column id="273" parent="268" name="title">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="274" parent="268" name="description">
       <Position>5</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="275" parent="268" name="status">
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>varchar(20)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="276" parent="268" name="reminder_times">
       <Position>7</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>jsonb|0s</StoredType>
       <TypeId>3802</TypeId>
     </column>
     <column id="277" parent="268" name="scheduled_at">
       <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
     <column id="278" parent="268" name="priority">
       <Position>9</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>varchar(20)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="279" parent="268" name="user_id">
       <NotNull>1</NotNull>
       <Position>10</Position>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
     <index id="280" parent="268" name="Reminders_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16407</ObjectId>
+      <ObjectId>16403</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>754</StateNumber>
+      <StateNumber>743</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <index id="281" parent="268" name="idx_Reminders_scheduled_at">
       <ColNames>scheduled_at</ColNames>
-      <ObjectId>16410</ObjectId>
-      <StateNumber>756</StateNumber>
+      <ObjectId>16406</ObjectId>
+      <StateNumber>745</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <index id="282" parent="268" name="idx_Reminders_user_id">
       <ColNames>user_id</ColNames>
-      <ObjectId>16409</ObjectId>
-      <StateNumber>755</StateNumber>
+      <ObjectId>16405</ObjectId>
+      <StateNumber>744</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="283" parent="268" name="Reminders_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16408</ObjectId>
+      <ObjectId>16404</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>754</StateNumber>
-      <UnderlyingIndexId>16407</UnderlyingIndexId>
+      <StateNumber>743</StateNumber>
+      <UnderlyingIndexId>16403</UnderlyingIndexId>
     </key>
     <column id="284" parent="269" name="id">
       <DefaultExpression>nextval(&apos;&quot;Users_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>bigint|0s</StoredType>
-      <SequenceId>16389</SequenceId>
+      <SequenceId>16385</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="285" parent="269" name="created_at">
       <Position>2</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
     <column id="286" parent="269" name="updated_at">
       <Position>3</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
     <column id="287" parent="269" name="email">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="288" parent="269" name="phone">
       <Position>5</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="289" parent="269" name="is_active">
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
     <column id="290" parent="269" name="name">
       <Position>7</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="291" parent="269" name="profile_picture">
       <Position>8</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="292" parent="269" name="password">
       <Position>9</Position>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <index id="293" parent="269" name="Users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16396</ObjectId>
+      <ObjectId>16392</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>751</StateNumber>
+      <StateNumber>740</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <index id="294" parent="269" name="idx_Users_email">
       <ColNames>email</ColNames>
-      <ObjectId>16399</ObjectId>
-      <StateNumber>753</StateNumber>
+      <ObjectId>16395</ObjectId>
+      <StateNumber>742</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4454,8 +4446,8 @@ false posixrules
     </index>
     <index id="295" parent="269" name="idx_Users_phone">
       <ColNames>phone</ColNames>
-      <ObjectId>16398</ObjectId>
-      <StateNumber>752</StateNumber>
+      <ObjectId>16394</ObjectId>
+      <StateNumber>741</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4464,10 +4456,10 @@ false posixrules
     </index>
     <key id="296" parent="269" name="Users_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16397</ObjectId>
+      <ObjectId>16393</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>751</StateNumber>
-      <UnderlyingIndexId>16396</UnderlyingIndexId>
+      <StateNumber>740</StateNumber>
+      <UnderlyingIndexId>16392</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

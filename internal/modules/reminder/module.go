@@ -12,6 +12,7 @@ var Module = fx.Module(
 	fx.Provide(
 		usecase.NewCreateReminderUsecase,
 		usecase.NewListRemindersUsecase,
+		usecase.NewDeleteeReminderUsecase,
 		handler.NewNewReminderHandler,
 		handler.NewMyRemindersHandler,
 	),

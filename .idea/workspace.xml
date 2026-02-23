@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="feat: complete google callback logic">
-      <change beforePath="$PROJECT_DIR$/.idea/GOHCache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GOHCache.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1539f4b3-e433-497b-9c19-4d69a9bc7888" name="Changes" comment="chore: update dependencies and modify project configuration">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8aaf253d-c80a-4d5e-bf36-cb5a84f0a90f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8aaf253d-c80a-4d5e-bf36-cb5a84f0a90f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8aaf253d-c80a-4d5e-bf36-cb5a84f0a90f/storage_v2/_src_/database/db.fgwAAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8aaf253d-c80a-4d5e-bf36-cb5a84f0a90f/storage_v2/_src_/database/db.fgwAAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/modules/reminder/module.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/modules/reminder/module.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,13 @@
     <persistenceIdMap>
       <entry key="_/Users/ali127hub/Documents/Projects/Toppira/backend" value="39wLJ8tevyk4SwShQn5WepMAFA9" />
     </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$USER_HOME$/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.6.darwin-arm64" />
   <component name="Git.Settings">
@@ -46,6 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.GoLinterPluginOnboardingV2": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -101,7 +112,8 @@
     <MESSAGE value="fix: fix documents" />
     <MESSAGE value="refactor: fix qodana warnings" />
     <MESSAGE value="feat: complete google callback logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: complete google callback logic" />
+    <MESSAGE value="chore: update dependencies and modify project configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update dependencies and modify project configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

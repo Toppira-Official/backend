@@ -17,6 +17,13 @@
             </set>
           </value>
         </entry>
+        <entry key="Client">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/queues/client.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="ClientError">
           <value>
             <set>
@@ -24,17 +31,17 @@
             </set>
           </value>
         </entry>
+        <entry key="CreateReminderInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/reminder/usecase/input/create.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="CreateUserInput">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/modules/user/usecase/input/create.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="DeleteReminderInput">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/reminder/handler/dto/delete_reminder.go" />
             </set>
           </value>
         </entry>
@@ -63,6 +70,20 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/modules/user/handler/get_me.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GoogleOauthHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/google_oauth.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GoogleUserInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/google_oauth_callback.go" />
             </set>
           </value>
         </entry>
@@ -103,10 +124,31 @@
             </set>
           </value>
         </entry>
-        <entry key="LoginWithEmailPasswordInput">
+        <entry key="Message">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/login_email_password.go" />
+              <option value="file://$PROJECT_DIR$/internal/modules/notification/domain/model/message.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MyRemindersHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/reminder/handler/my_reminders.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="NewReminderHandler">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/reminder/handler/new_reminder.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PaginationInput">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/shared/dto/pagination.go" />
             </set>
           </value>
         </entry>
@@ -138,24 +180,10 @@
             </set>
           </value>
         </entry>
-        <entry key="SignUpWithEmailPasswordInput">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/sign_up_email_password.go" />
-            </set>
-          </value>
-        </entry>
         <entry key="UpdateMeHandler">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/modules/user/handler/update_me.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="UpdateMeInput">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/internal/modules/user/handler/dto/update_me.go" />
             </set>
           </value>
         </entry>
@@ -170,6 +198,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/shared/entities/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="createReminderUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/reminder/usecase/create.go" />
             </set>
           </value>
         </entry>
@@ -208,10 +243,31 @@
             </set>
           </value>
         </entry>
+        <entry key="googleOauthCallbackUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/google_oauth_callback.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="googleOauthRedirectURLUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/google_oauth_url.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="hashPasswordUsecase">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/modules/auth/usecase/password._hash.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="listRemindersUsecase">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/reminder/usecase/list.go" />
             </set>
           </value>
         </entry>
@@ -247,6 +303,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="updateUserJob">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/modules/user/jobs/update_user.go" />
             </set>
           </value>
         </entry>
@@ -313,21 +376,21 @@
         <entry key="file://$PROJECT_DIR$/cmd/http/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502311" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/cmd/main.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1771872614129" />
+              <option name="lastModified" value="1771869282383" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/docs/docs.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502312" />
+              <option name="lastModified" value="1771878646259" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/cache.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
         </entry>
@@ -341,7 +404,7 @@
         <entry key="file://$PROJECT_DIR$/internal/configs/environments.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502313" />
+              <option name="lastModified" value="1771878443852" />
               <option name="schema">
                 <list>
                   <option value="Environments" />
@@ -353,7 +416,7 @@
         <entry key="file://$PROJECT_DIR$/internal/configs/http_server.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502313" />
+              <option name="lastModified" value="1771877700004" />
               <option name="schema">
                 <list>
                   <option value="HttpServer" />
@@ -380,6 +443,13 @@
         <entry key="file://$PROJECT_DIR$/internal/configs/module.go">
           <value>
             <ScannedPath>
+              <option name="lastModified" value="1771877765896" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/configs/oauth.go">
+          <value>
+            <ScannedPath>
               <option name="lastModified" value="1771618502313" />
             </ScannedPath>
           </value>
@@ -391,25 +461,13 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/login_email_password.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/google_oauth.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770753730215" />
+              <option name="lastModified" value="1771876008523" />
               <option name="schema">
                 <list>
-                  <option value="LoginWithEmailPasswordInput" />
-                </list>
-              </option>
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/dto/sign_up_email_password.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1770753730215" />
-              <option name="schema">
-                <list>
-                  <option value="SignUpWithEmailPasswordInput" />
+                  <option value="GoogleOauthHandler" />
                 </list>
               </option>
             </ScannedPath>
@@ -418,7 +476,7 @@
         <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/login_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502314" />
+              <option name="lastModified" value="1771876001237" />
               <option name="schema">
                 <list>
                   <option value="LoginHandler" />
@@ -430,7 +488,7 @@
         <entry key="file://$PROJECT_DIR$/internal/modules/auth/handler/sign_up_email_password.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502314" />
+              <option name="lastModified" value="1771876006005" />
               <option name="schema">
                 <list>
                   <option value="SignUpHandler" />
@@ -453,6 +511,31 @@
               <option name="schema">
                 <list>
                   <option value="Handler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/google_oauth_callback.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="GoogleUserInfo" />
+                  <option value="googleOauthCallbackUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/auth/usecase/google_oauth_url.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502314" />
+              <option name="schema">
+                <list>
+                  <option value="googleOauthRedirectURLUsecase" />
                 </list>
               </option>
             </ScannedPath>
@@ -506,10 +589,36 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/notification/contract/sender.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771963119487" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/notification/domain/contract/sender.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771963240618" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/notification/domain/model/message.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771963201494" />
+              <option name="schema">
+                <list>
+                  <option value="Message" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/internal/modules/reminder/handler/delete_reminder.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771874596842" />
+              <option name="lastModified" value="1771876037298" />
               <option name="schema">
                 <list>
                   <option value="DeleteRemindersHandler" />
@@ -518,15 +627,34 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/handler/dto/delete_reminder.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/handler/my_reminders.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771873771638" />
+              <option name="lastModified" value="1771876948510" />
               <option name="schema">
                 <list>
-                  <option value="DeleteReminderInput" />
+                  <option value="MyRemindersHandler" />
                 </list>
               </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/handler/new_reminder.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771876039648" />
+              <option name="schema">
+                <list>
+                  <option value="NewReminderHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/handler/validator/priority.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282384" />
             </ScannedPath>
           </value>
         </entry>
@@ -549,6 +677,18 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/usecase/create.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282385" />
+              <option name="schema">
+                <list>
+                  <option value="createReminderUsecase" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/internal/modules/reminder/usecase/delete.go">
           <value>
             <ScannedPath>
@@ -561,13 +701,25 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/dto/update_me.go">
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/usecase/input/create.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770753730216" />
+              <option name="lastModified" value="1771869282385" />
               <option name="schema">
                 <list>
-                  <option value="UpdateMeInput" />
+                  <option value="CreateReminderInput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/reminder/usecase/list.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282385" />
+              <option name="schema">
+                <list>
+                  <option value="listRemindersUsecase" />
                 </list>
               </option>
             </ScannedPath>
@@ -576,7 +728,7 @@
         <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/get_me.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502315" />
+              <option name="lastModified" value="1771876011808" />
               <option name="schema">
                 <list>
                   <option value="GetMeHandler" />
@@ -588,10 +740,22 @@
         <entry key="file://$PROJECT_DIR$/internal/modules/user/handler/update_me.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502315" />
+              <option name="lastModified" value="1771876059638" />
               <option name="schema">
                 <list>
                   <option value="UpdateMeHandler" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/modules/user/jobs/update_user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502315" />
+              <option name="schema">
+                <list>
+                  <option value="updateUserJob" />
                 </list>
               </option>
             </ScannedPath>
@@ -688,6 +852,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/constants/reminder_priorities.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282385" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/internal/shared/constants/reminder_statuses.go">
           <value>
             <ScannedPath>
@@ -702,6 +873,18 @@
               <option name="schema">
                 <list>
                   <option value="HttpOutput" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/dto/pagination.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282385" />
+              <option name="schema">
+                <list>
+                  <option value="PaginationInput" />
                 </list>
               </option>
             </ScannedPath>
@@ -722,7 +905,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/entities/reminder.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502316" />
+              <option name="lastModified" value="1771869282385" />
               <option name="schema">
                 <list>
                   <option value="Reminder" />
@@ -766,14 +949,21 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/http.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502316" />
+              <option name="lastModified" value="1771877173819" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/errors/reminder.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771869282385" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/shared/errors/shared.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502316" />
+              <option name="lastModified" value="1771877162388" />
             </ScannedPath>
           </value>
         </entry>
@@ -801,14 +991,47 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/middlewares/module.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770753730218" />
+              <option name="lastModified" value="1771877661166" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/queues/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
+              <option name="schema">
+                <list>
+                  <option value="Client" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/queues/module.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/queues/run.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/shared/queues/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1771618502317" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/internal/shared/repositories/gen.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1770535558852" />
+              <option name="lastModified" value="1771878646420" />
               <option name="schema">
                 <list>
                   <option value="Query" />
@@ -822,7 +1045,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/repositories/reminders.gen.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502317" />
+              <option name="lastModified" value="1771878646415" />
               <option name="schema">
                 <list>
                   <option value="reminder" />
@@ -837,7 +1060,7 @@
         <entry key="file://$PROJECT_DIR$/internal/shared/repositories/users.gen.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1771618502317" />
+              <option name="lastModified" value="1771878646415" />
               <option name="schema">
                 <list>
                   <option value="user" />
@@ -874,10 +1097,12 @@
       <map>
         <entry key="app_error" value="AppError" />
         <entry key="base" value="Base" />
+        <entry key="client" value="Client" />
         <entry key="client_error" value="ClientError" />
+        <entry key="create_reminder_input" value="CreateReminderInput" />
+        <entry key="create_reminder_usecase" value="createReminderUsecase" />
         <entry key="create_user_input" value="CreateUserInput" />
         <entry key="create_user_usecase" value="createUserUsecase" />
-        <entry key="delete_reminder_input" value="DeleteReminderInput" />
         <entry key="delete_reminder_usecase" value="deleteReminderUsecase" />
         <entry key="delete_reminders_handler" value="DeleteRemindersHandler" />
         <entry key="environments" value="Environments" />
@@ -886,13 +1111,21 @@
         <entry key="find_user_by_id_usecase" value="findUserByIDUsecase" />
         <entry key="generate_jwt_usecase" value="generateJwtUsecase" />
         <entry key="get_me_handler" value="GetMeHandler" />
+        <entry key="google_oauth_callback_usecase" value="googleOauthCallbackUsecase" />
+        <entry key="google_oauth_handler" value="GoogleOauthHandler" />
+        <entry key="google_oauth_redirect_url_usecase" value="googleOauthRedirectURLUsecase" />
+        <entry key="google_user_info" value="GoogleUserInfo" />
         <entry key="handler" value="Handler" />
         <entry key="hash_password_usecase" value="hashPasswordUsecase" />
         <entry key="http_output" value="HttpOutput" />
         <entry key="http_server" value="HttpServer" />
         <entry key="http_server_deps" value="HttpServerDeps" />
+        <entry key="list_reminders_usecase" value="listRemindersUsecase" />
         <entry key="login_handler" value="LoginHandler" />
-        <entry key="login_with_email_password_input" value="LoginWithEmailPasswordInput" />
+        <entry key="message" value="Message" />
+        <entry key="my_reminders_handler" value="MyRemindersHandler" />
+        <entry key="new_reminder_handler" value="NewReminderHandler" />
+        <entry key="pagination_input" value="PaginationInput" />
         <entry key="query" value="Query" />
         <entry key="query_ctx" value="queryCtx" />
         <entry key="query_tx" value="QueryTx" />
@@ -901,10 +1134,9 @@
         <entry key="reminder_belongs_to_user_tx" value="reminderBelongsToUserTx" />
         <entry key="reminder_do" value="reminderDo" />
         <entry key="sign_up_handler" value="SignUpHandler" />
-        <entry key="sign_up_with_email_password_input" value="SignUpWithEmailPasswordInput" />
         <entry key="update_me_handler" value="UpdateMeHandler" />
-        <entry key="update_me_input" value="UpdateMeInput" />
         <entry key="update_user_input" value="UpdateUserInput" />
+        <entry key="update_user_job" value="updateUserJob" />
         <entry key="update_user_usecase" value="updateUserUsecase" />
         <entry key="user" value="user" />
         <entry key="user_do" value="userDo" />
@@ -914,6 +1146,6 @@
         <entry key="verify_password_usecase" value="verifyPasswordUsecase" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1771869236716" />
+    <option name="lastTimeChecked" value="1771962920970" />
   </component>
 </project>

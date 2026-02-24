@@ -198,6 +198,58 @@ const docTemplate = `{
                 }
             }
         },
+        "/notification/firebase/subscribe": {
+            "post": {
+                "description": "Subscribe to Firebase Cloud Messaging with the provided token",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Notification"
+                ],
+                "summary": "Subscribe to Firebase Cloud Messaging",
+                "parameters": [
+                    {
+                        "description": "Subscribe Firebase Input",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SubscribeFirebaseInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/HttpOutput-any"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable",
+                        "schema": {
+                            "$ref": "#/definitions/ClientError"
+                        }
+                    }
+                }
+            }
+        },
         "/reminder": {
             "get": {
                 "security": [
@@ -512,6 +564,7 @@ const docTemplate = `{
                 "USER_INVALID_DATA",
                 "USER_ALREADY_EXISTS",
                 "USER_NOT_FOUND",
+                "Reminder_INVALID_DATA",
                 "AUTH_INVALID_TOKEN",
                 "AUTH_EXPIRED_TOKEN",
                 "AUTH_TOKEN_NOT_PROVIDED",
@@ -519,13 +572,13 @@ const docTemplate = `{
                 "SERVER_INTERNAL_ERROR",
                 "SERVER_NOT_RESPONDING",
                 "TOO_MANY_REQUESTS",
-                "SERVICE_TEMPORARILY_UNAVAILABLE",
-                "Reminder_INVALID_DATA"
+                "SERVICE_TEMPORARILY_UNAVAILABLE"
             ],
             "x-enum-varnames": [
                 "ErrUserInvalidData",
                 "ErrUserAlreadyExists",
                 "ErrUserNotFound",
+                "ErrReminderInvalidData",
                 "ErrAuthInvalidToken",
                 "ErrAuthExpiredToken",
                 "ErrAuthTokenNotProvided",
@@ -533,8 +586,7 @@ const docTemplate = `{
                 "ErrServerInternalError",
                 "ErrServerNotResponding",
                 "ErrTooManyRequests",
-                "ErrServiceTemporarilyUnavailable",
-                "ErrReminderInvalidData"
+                "ErrServiceTemporarilyUnavailable"
             ]
         },
         "GetMeOutput": {
@@ -618,6 +670,12 @@ const docTemplate = `{
                 "data": {
                     "$ref": "#/definitions/UpdateMeOutput"
                 }
+            }
+        },
+        "HttpOutput-any": {
+            "type": "object",
+            "properties": {
+                "data": {}
             }
         },
         "LoginWithEmailPasswordInput": {
@@ -718,6 +776,17 @@ const docTemplate = `{
                     "maxLength": 72,
                     "minLength": 8,
                     "example": "StrongPassword1234"
+                }
+            }
+        },
+        "SubscribeFirebaseInput": {
+            "type": "object",
+            "required": [
+                "token"
+            ],
+            "properties": {
+                "token": {
+                    "type": "string"
                 }
             }
         },

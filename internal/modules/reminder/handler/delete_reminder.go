@@ -6,8 +6,8 @@ import (
 	reminderInput "github.com/Toppira-Official/Reminder_Server/internal/modules/reminder/handler/dto/input"
 	reminderOutput "github.com/Toppira-Official/Reminder_Server/internal/modules/reminder/handler/dto/output"
 	"github.com/Toppira-Official/Reminder_Server/internal/modules/reminder/usecase"
-	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 	sharedDto "github.com/Toppira-Official/Reminder_Server/internal/shared/dto"
+	"github.com/Toppira-Official/Reminder_Server/internal/shared/entities"
 
 	apperrors "github.com/Toppira-Official/Reminder_Server/internal/shared/errors"
 	"github.com/gin-gonic/gin"
@@ -52,7 +52,7 @@ func (hl *DeleteRemindersHandler) DeleteReminder(c *gin.Context) {
 	}
 
 	if err := hl.deleteReminderUsecase.Execute(c.Request.Context(), q.ID, user.ID); err != nil {
-		c.Error(apperrors.E(apperrors.ErrReminderInvalidData))
+		c.Error(err)
 		return
 	}
 

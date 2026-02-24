@@ -23,6 +23,7 @@ definitions:
     - USER_INVALID_DATA
     - USER_ALREADY_EXISTS
     - USER_NOT_FOUND
+    - Reminder_INVALID_DATA
     - AUTH_INVALID_TOKEN
     - AUTH_EXPIRED_TOKEN
     - AUTH_TOKEN_NOT_PROVIDED
@@ -31,12 +32,12 @@ definitions:
     - SERVER_NOT_RESPONDING
     - TOO_MANY_REQUESTS
     - SERVICE_TEMPORARILY_UNAVAILABLE
-    - Reminder_INVALID_DATA
     type: string
     x-enum-varnames:
     - ErrUserInvalidData
     - ErrUserAlreadyExists
     - ErrUserNotFound
+    - ErrReminderInvalidData
     - ErrAuthInvalidToken
     - ErrAuthExpiredToken
     - ErrAuthTokenNotProvided
@@ -45,7 +46,6 @@ definitions:
     - ErrServerNotResponding
     - ErrTooManyRequests
     - ErrServiceTemporarilyUnavailable
-    - ErrReminderInvalidData
   GetMeOutput:
     properties:
       user:
@@ -97,6 +97,10 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/UpdateMeOutput'
+    type: object
+  HttpOutput-any:
+    properties:
+      data: {}
     type: object
   LoginWithEmailPasswordInput:
     properties:
@@ -169,6 +173,13 @@ definitions:
     required:
     - email
     - password
+    type: object
+  SubscribeFirebaseInput:
+    properties:
+      token:
+        type: string
+    required:
+    - token
     type: object
   UpdateMeAcceptedOutput:
     properties:
@@ -410,6 +421,40 @@ paths:
       summary: sign up with email and password
       tags:
       - Authentication
+  /notification/firebase/subscribe:
+    post:
+      consumes:
+      - application/json
+      description: Subscribe to Firebase Cloud Messaging with the provided token
+      parameters:
+      - description: Subscribe Firebase Input
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/SubscribeFirebaseInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/HttpOutput-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ClientError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ClientError'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ClientError'
+      summary: Subscribe to Firebase Cloud Messaging
+      tags:
+      - Notification
   /reminder:
     get:
       parameters:

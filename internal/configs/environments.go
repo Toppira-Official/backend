@@ -22,6 +22,9 @@ type Environments struct {
 	REDIS_PORT           Environment
 	REDIS_PASSWORD       Environment
 	REDIS_DB             Environment
+	ELASTIC_PASSWORD     Environment
+	ELASTIC_HOST         Environment
+	ELASTIC_PORT         Environment
 	JWT_SECRET           Environment
 	JWT_EXPIRES_IN_HOURS Environment
 	RATE_LIMIT_QPS       Environment
@@ -53,6 +56,9 @@ func GetEnvironments() Environments {
 		REDIS_PORT:           Environment(os.Getenv("REDIS_PORT")).orDefault("6379"),
 		REDIS_PASSWORD:       Environment(os.Getenv("REDIS_PASSWORD")).orPanic(),
 		REDIS_DB:             Environment(os.Getenv("REDIS_DB")).orDefault("0"),
+		ELASTIC_PASSWORD:     Environment(os.Getenv("ELASTIC_PASSWORD")).orPanic(),
+		ELASTIC_HOST:         Environment(os.Getenv("ELASTIC_HOST")).orDefault("localhost"),
+		ELASTIC_PORT:         Environment(os.Getenv("ELASTIC_PORT")).orDefault("9200"),
 		JWT_SECRET:           Environment(os.Getenv("JWT_SECRET")).orPanic(),
 		JWT_EXPIRES_IN_HOURS: Environment(os.Getenv("JWT_EXPIRES_IN_HOURS")).orPanic(),
 		RATE_LIMIT_QPS:       Environment(os.Getenv("RATE_LIMIT_QPS")).orPanic(),
